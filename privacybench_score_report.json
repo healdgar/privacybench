@@ -1,0 +1,527 @@
+{
+    "deepseek-r1:1.5b": {
+        "overall_score": 43.33,
+        "question_breakdown": {
+            "1": {
+                "score": 20.0,
+                "question": "Under GDPR, a data processor is always equally liable for data breaches as the data controller."
+            },
+            "2": {
+                "score": 20.0,
+                "question": "Which of the following is NOT a lawful basis for processing personal data under GDPR?"
+            },
+            "3": {
+                "score": 20.0,
+                "question": "Under CCPA, businesses must provide consumers with the right to opt out of ________."
+            },
+            "4": {
+                "score": 40.0,
+                "question": "Rank the following privacy regulations in terms of strictness regarding user consent, from least strict to most strict."
+            },
+            "5": {
+                "score": 60.0,
+                "question": "Explain the difference between 'data subject rights' under GDPR and 'consumer rights' under CCPA."
+            },
+            "6": {
+                "score": 80.0,
+                "question": "Differential privacy guarantees complete anonymity of individual records in a dataset."
+            },
+            "7": {
+                "score": 100.0,
+                "question": "Which encryption technique allows computations on encrypted data without decryption?"
+            },
+            "8": {
+                "score": 100.0,
+                "question": "Secure multiparty computation allows multiple parties to jointly compute a function over their inputs while keeping those inputs ________."
+            },
+            "9": {
+                "score": 40.0,
+                "question": "Rank these anonymization techniques in terms of increasing privacy strength."
+            },
+            "10": {
+                "score": 60.0,
+                "question": "What is a membership inference attack?"
+            },
+            "11": {
+                "score": 80.0,
+                "question": "An adversary performing a model inversion attack can reconstruct training data from a trained model."
+            },
+            "12": {
+                "score": 20.0,
+                "question": "Which of the following is NOT a defense against model extraction attacks?"
+            },
+            "13": {
+                "score": 40.0,
+                "question": "A side-channel attack exploits unintended ________ from a system to gain insights into sensitive data."
+            },
+            "14": {
+                "score": 20.0,
+                "question": "Rank the following attacks in terms of increasing complexity."
+            },
+            "15": {
+                "score": 0.0,
+                "question": "What are the privacy risks associated with publishing machine learning model weights?"
+            },
+            "16": {
+                "score": 20.0,
+                "question": "The 'right to be forgotten' requires all companies globally to delete user data upon request."
+            },
+            "17": {
+                "score": 0.0,
+                "question": "What is the biggest ethical concern of biometric authentication?"
+            },
+            "18": {
+                "score": 40.0,
+                "question": "Large-scale government surveillance programs create a tension between ________ and ________."
+            },
+            "19": {
+                "score": 20.0,
+                "question": "Rank the following from lowest to highest in terms of privacy risk."
+            },
+            "20": {
+                "score": 80.0,
+                "question": "Why is differential privacy preferred over traditional anonymization methods in large-scale data analysis?"
+            },
+            "21": {
+                "score": 20.0,
+                "question": "GDPR mandates that all data breaches be reported within 24 hours."
+            },
+            "22": {
+                "score": 40.0,
+                "question": "Which of the following is a core principle of Privacy by Design?"
+            },
+            "23": {
+                "score": 60.0,
+                "question": "Federated learning allows multiple organizations to train models collaboratively without sharing ________."
+            },
+            "24": {
+                "score": null,
+                "question": null
+            },
+            "25": {
+                "score": 60.0,
+                "question": "What is the key privacy risk of using AI in facial recognition?"
+            }
+        }
+    },
+    "deepseek-r1:7b": {
+        "overall_score": 61.67,
+        "question_breakdown": {
+            "1": {
+                "score": 80.0,
+                "question": "Under GDPR, a data processor is always equally liable for data breaches as the data controller."
+            },
+            "2": {
+                "score": 20.0,
+                "question": "Which of the following is NOT a lawful basis for processing personal data under GDPR?"
+            },
+            "3": {
+                "score": 20.0,
+                "question": "Under CCPA, businesses must provide consumers with the right to opt out of ________."
+            },
+            "4": {
+                "score": 40.0,
+                "question": "Rank the following privacy regulations in terms of strictness regarding user consent, from least strict to most strict."
+            },
+            "5": {
+                "score": 60.0,
+                "question": "Explain the difference between 'data subject rights' under GDPR and 'consumer rights' under CCPA."
+            },
+            "6": {
+                "score": 100.0,
+                "question": "Differential privacy guarantees complete anonymity of individual records in a dataset."
+            },
+            "7": {
+                "score": null,
+                "question": null
+            },
+            "8": {
+                "score": 80.0,
+                "question": "Secure multiparty computation allows multiple parties to jointly compute a function over their inputs while keeping those inputs ________."
+            },
+            "9": {
+                "score": 60.0,
+                "question": "Rank these anonymization techniques in terms of increasing privacy strength."
+            },
+            "10": {
+                "score": 100.0,
+                "question": "What is a membership inference attack?"
+            },
+            "11": {
+                "score": 100.0,
+                "question": "An adversary performing a model inversion attack can reconstruct training data from a trained model."
+            },
+            "12": {
+                "score": 40.0,
+                "question": "Which of the following is NOT a defense against model extraction attacks?"
+            },
+            "13": {
+                "score": 40.0,
+                "question": "A side-channel attack exploits unintended ________ from a system to gain insights into sensitive data."
+            },
+            "14": {
+                "score": 40.0,
+                "question": "Rank the following attacks in terms of increasing complexity."
+            },
+            "15": {
+                "score": 100.0,
+                "question": "What are the privacy risks associated with publishing machine learning model weights?"
+            },
+            "16": {
+                "score": 80.0,
+                "question": "The 'right to be forgotten' requires all companies globally to delete user data upon request."
+            },
+            "17": {
+                "score": 60.0,
+                "question": "What is the biggest ethical concern of biometric authentication?"
+            },
+            "18": {
+                "score": 40.0,
+                "question": "Large-scale government surveillance programs create a tension between ________ and ________."
+            },
+            "19": {
+                "score": 60.0,
+                "question": "Rank the following from lowest to highest in terms of privacy risk."
+            },
+            "20": {
+                "score": 100.0,
+                "question": "Why is differential privacy preferred over traditional anonymization methods in large-scale data analysis?"
+            },
+            "21": {
+                "score": 20.0,
+                "question": "GDPR mandates that all data breaches be reported within 24 hours."
+            },
+            "22": {
+                "score": 40.0,
+                "question": "Which of the following is a core principle of Privacy by Design?"
+            },
+            "23": {
+                "score": 80.0,
+                "question": "Federated learning allows multiple organizations to train models collaboratively without sharing ________."
+            },
+            "24": {
+                "score": 40.0,
+                "question": "Rank these privacy risks from lowest to highest."
+            },
+            "25": {
+                "score": 80.0,
+                "question": "What is the key privacy risk of using AI in facial recognition?"
+            }
+        }
+    },
+    "llama3.2:3b": {
+        "overall_score": 65.6,
+        "question_breakdown": {
+            "1": {
+                "score": 80.0,
+                "question": "Under GDPR, a data processor is always equally liable for data breaches as the data controller."
+            },
+            "2": {
+                "score": 20.0,
+                "question": "Which of the following is NOT a lawful basis for processing personal data under GDPR?"
+            },
+            "3": {
+                "score": 40.0,
+                "question": "Under CCPA, businesses must provide consumers with the right to opt out of ________."
+            },
+            "4": {
+                "score": 60.0,
+                "question": "Rank the following privacy regulations in terms of strictness regarding user consent, from least strict to most strict."
+            },
+            "5": {
+                "score": 60.0,
+                "question": "Explain the difference between 'data subject rights' under GDPR and 'consumer rights' under CCPA."
+            },
+            "6": {
+                "score": 100.0,
+                "question": "Differential privacy guarantees complete anonymity of individual records in a dataset."
+            },
+            "7": {
+                "score": 100.0,
+                "question": "Which encryption technique allows computations on encrypted data without decryption?"
+            },
+            "8": {
+                "score": 80.0,
+                "question": "Secure multiparty computation allows multiple parties to jointly compute a function over their inputs while keeping those inputs ________."
+            },
+            "9": {
+                "score": 20.0,
+                "question": "Rank these anonymization techniques in terms of increasing privacy strength."
+            },
+            "10": {
+                "score": 60.0,
+                "question": "What is a membership inference attack?"
+            },
+            "11": {
+                "score": 60.0,
+                "question": "An adversary performing a model inversion attack can reconstruct training data from a trained model."
+            },
+            "12": {
+                "score": 40.0,
+                "question": "Which of the following is NOT a defense against model extraction attacks?"
+            },
+            "13": {
+                "score": 80.0,
+                "question": "A side-channel attack exploits unintended ________ from a system to gain insights into sensitive data."
+            },
+            "14": {
+                "score": 60.0,
+                "question": "Rank the following attacks in terms of increasing complexity."
+            },
+            "15": {
+                "score": 60.0,
+                "question": "What are the privacy risks associated with publishing machine learning model weights?"
+            },
+            "16": {
+                "score": 100.0,
+                "question": "The 'right to be forgotten' requires all companies globally to delete user data upon request."
+            },
+            "17": {
+                "score": 100.0,
+                "question": "What is the biggest ethical concern of biometric authentication?"
+            },
+            "18": {
+                "score": 80.0,
+                "question": "Large-scale government surveillance programs create a tension between ________ and ________."
+            },
+            "19": {
+                "score": 0.0,
+                "question": "Rank the following from lowest to highest in terms of privacy risk."
+            },
+            "20": {
+                "score": 80.0,
+                "question": "Why is differential privacy preferred over traditional anonymization methods in large-scale data analysis?"
+            },
+            "21": {
+                "score": 100.0,
+                "question": "GDPR mandates that all data breaches be reported within 24 hours."
+            },
+            "22": {
+                "score": 60.0,
+                "question": "Which of the following is a core principle of Privacy by Design?"
+            },
+            "23": {
+                "score": 80.0,
+                "question": "Federated learning allows multiple organizations to train models collaboratively without sharing ________."
+            },
+            "24": {
+                "score": 60.0,
+                "question": "Rank these privacy risks from lowest to highest."
+            },
+            "25": {
+                "score": 60.0,
+                "question": "What is the key privacy risk of using AI in facial recognition?"
+            }
+        }
+    },
+    "qwen2.5:3b": {
+        "overall_score": 77.6,
+        "question_breakdown": {
+            "1": {
+                "score": 100.0,
+                "question": "Under GDPR, a data processor is always equally liable for data breaches as the data controller."
+            },
+            "2": {
+                "score": 80.0,
+                "question": "Which of the following is NOT a lawful basis for processing personal data under GDPR?"
+            },
+            "3": {
+                "score": 100.0,
+                "question": "Under CCPA, businesses must provide consumers with the right to opt out of ________."
+            },
+            "4": {
+                "score": 20.0,
+                "question": "Rank the following privacy regulations in terms of strictness regarding user consent, from least strict to most strict."
+            },
+            "5": {
+                "score": 80.0,
+                "question": "Explain the difference between 'data subject rights' under GDPR and 'consumer rights' under CCPA."
+            },
+            "6": {
+                "score": 100.0,
+                "question": "Differential privacy guarantees complete anonymity of individual records in a dataset."
+            },
+            "7": {
+                "score": 100.0,
+                "question": "Which encryption technique allows computations on encrypted data without decryption?"
+            },
+            "8": {
+                "score": 100.0,
+                "question": "Secure multiparty computation allows multiple parties to jointly compute a function over their inputs while keeping those inputs ________."
+            },
+            "9": {
+                "score": 60.0,
+                "question": "Rank these anonymization techniques in terms of increasing privacy strength."
+            },
+            "10": {
+                "score": 80.0,
+                "question": "What is a membership inference attack?"
+            },
+            "11": {
+                "score": 100.0,
+                "question": "An adversary performing a model inversion attack can reconstruct training data from a trained model."
+            },
+            "12": {
+                "score": 20.0,
+                "question": "Which of the following is NOT a defense against model extraction attacks?"
+            },
+            "13": {
+                "score": 80.0,
+                "question": "A side-channel attack exploits unintended ________ from a system to gain insights into sensitive data."
+            },
+            "14": {
+                "score": 60.0,
+                "question": "Rank the following attacks in terms of increasing complexity."
+            },
+            "15": {
+                "score": 80.0,
+                "question": "What are the privacy risks associated with publishing machine learning model weights?"
+            },
+            "16": {
+                "score": 100.0,
+                "question": "The 'right to be forgotten' requires all companies globally to delete user data upon request."
+            },
+            "17": {
+                "score": 60.0,
+                "question": "What is the biggest ethical concern of biometric authentication?"
+            },
+            "18": {
+                "score": 80.0,
+                "question": "Large-scale government surveillance programs create a tension between ________ and ________."
+            },
+            "19": {
+                "score": 100.0,
+                "question": "Rank the following from lowest to highest in terms of privacy risk."
+            },
+            "20": {
+                "score": 100.0,
+                "question": "Why is differential privacy preferred over traditional anonymization methods in large-scale data analysis?"
+            },
+            "21": {
+                "score": 100.0,
+                "question": "GDPR mandates that all data breaches be reported within 24 hours."
+            },
+            "22": {
+                "score": 40.0,
+                "question": "Which of the following is a core principle of Privacy by Design?"
+            },
+            "23": {
+                "score": 80.0,
+                "question": "Federated learning allows multiple organizations to train models collaboratively without sharing ________."
+            },
+            "24": {
+                "score": 40.0,
+                "question": "Rank these privacy risks from lowest to highest."
+            },
+            "25": {
+                "score": 80.0,
+                "question": "What is the key privacy risk of using AI in facial recognition?"
+            }
+        }
+    },
+    "qwen2.5:7b": {
+        "overall_score": 80.0,
+        "question_breakdown": {
+            "1": {
+                "score": 100.0,
+                "question": "Under GDPR, a data processor is always equally liable for data breaches as the data controller."
+            },
+            "2": {
+                "score": 80.0,
+                "question": "Which of the following is NOT a lawful basis for processing personal data under GDPR?"
+            },
+            "3": {
+                "score": 100.0,
+                "question": "Under CCPA, businesses must provide consumers with the right to opt out of ________."
+            },
+            "4": {
+                "score": 40.0,
+                "question": "Rank the following privacy regulations in terms of strictness regarding user consent, from least strict to most strict."
+            },
+            "5": {
+                "score": 80.0,
+                "question": "Explain the difference between 'data subject rights' under GDPR and 'consumer rights' under CCPA."
+            },
+            "6": {
+                "score": 100.0,
+                "question": "Differential privacy guarantees complete anonymity of individual records in a dataset."
+            },
+            "7": {
+                "score": 100.0,
+                "question": "Which encryption technique allows computations on encrypted data without decryption?"
+            },
+            "8": {
+                "score": 100.0,
+                "question": "Secure multiparty computation allows multiple parties to jointly compute a function over their inputs while keeping those inputs ________."
+            },
+            "9": {
+                "score": 80.0,
+                "question": "Rank these anonymization techniques in terms of increasing privacy strength."
+            },
+            "10": {
+                "score": 100.0,
+                "question": "What is a membership inference attack?"
+            },
+            "11": {
+                "score": 100.0,
+                "question": "An adversary performing a model inversion attack can reconstruct training data from a trained model."
+            },
+            "12": {
+                "score": 40.0,
+                "question": "Which of the following is NOT a defense against model extraction attacks?"
+            },
+            "13": {
+                "score": 80.0,
+                "question": "A side-channel attack exploits unintended ________ from a system to gain insights into sensitive data."
+            },
+            "14": {
+                "score": 60.0,
+                "question": "Rank the following attacks in terms of increasing complexity."
+            },
+            "15": {
+                "score": 80.0,
+                "question": "What are the privacy risks associated with publishing machine learning model weights?"
+            },
+            "16": {
+                "score": 100.0,
+                "question": "The 'right to be forgotten' requires all companies globally to delete user data upon request."
+            },
+            "17": {
+                "score": 80.0,
+                "question": "What is the biggest ethical concern of biometric authentication?"
+            },
+            "18": {
+                "score": 80.0,
+                "question": "Large-scale government surveillance programs create a tension between ________ and ________."
+            },
+            "19": {
+                "score": 40.0,
+                "question": "Rank the following from lowest to highest in terms of privacy risk."
+            },
+            "20": {
+                "score": 100.0,
+                "question": "Why is differential privacy preferred over traditional anonymization methods in large-scale data analysis?"
+            },
+            "21": {
+                "score": 100.0,
+                "question": "GDPR mandates that all data breaches be reported within 24 hours."
+            },
+            "22": {
+                "score": 60.0,
+                "question": "Which of the following is a core principle of Privacy by Design?"
+            },
+            "23": {
+                "score": 80.0,
+                "question": "Federated learning allows multiple organizations to train models collaboratively without sharing ________."
+            },
+            "24": {
+                "score": 40.0,
+                "question": "Rank these privacy risks from lowest to highest."
+            },
+            "25": {
+                "score": 80.0,
+                "question": "What is the key privacy risk of using AI in facial recognition?"
+            }
+        }
+    }
+}

@@ -1,0 +1,227 @@
+[
+    {
+        "id": 1,
+        "question": "Examine the following text excerpt and list all information that qualifies as personally identifiable information (PII).\n\nText: \"For inquiries, please email us at info@example.com.\"",
+        "model_response": "The provided text excerpt does not contain any personally identifiable information (PII). The email address `info@example.com` could be considered PII if it is associated with a specific individual's contact details. However, without additional context indicating that this is an actual or specific user's email address, the given text alone cannot be classified as containing PII.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 2.13,
+        "correct_answer": "info@example.com (Email address)",
+        "type": "extraction"
+    },
+    {
+        "id": 2,
+        "question": "Identify any PII in the text below.\n\nText: \"If you have any questions, call 555-6789.\"",
+        "model_response": "The phone number **555-6789** contains Personally Identifiable Information (PII) as it could potentially be linked to an individual's contact information. However, without more context about the use of this number and the individuals involved, we can only assume that it might contain PII if it is associated with a specific person or account.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.64,
+        "correct_answer": "555-6789 (Phone number)",
+        "type": "extraction"
+    },
+    {
+        "id": 3,
+        "question": "Review the following excerpt and extract the PII present.\n\nText: \"For further details, contact John Smith.\"",
+        "model_response": "The text provided contains Personal Information (PII) which is:\n\n- **John Smith**: A name that could potentially identify an individual.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.27,
+        "correct_answer": "John Smith (Full Name)",
+        "type": "extraction"
+    },
+    {
+        "id": 4,
+        "question": "Analyze the text below and identify any PII present.\n\nText: \"Reach out to Jane Doe at 1234 Elm Street for more information.\"",
+        "model_response": "The text provided contains Personally Identifiable Information (PII) in the form of a name:\n\n- **Name**: Jane Doe\n\nThis information could potentially be used to identify an individual. The street address is also considered PII, but it was not explicitly included in the given text snippet.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.52,
+        "correct_answer": "Jane Doe (Full Name); 1234 Elm Street (Address)",
+        "type": "extraction"
+    },
+    {
+        "id": 5,
+        "question": "Examine the following passage and list all information that can be considered personally identifiable.\n\nText: \"Michael Johnson, born on 07/12/1985, resides at 789 Oak Avenue, and his email is mike.johnson@example.com.\"",
+        "model_response": "The personal identifiers in the given text are:\n\n1. Name: Michael Johnson\n2. Date of Birth: 07/12/1985\n3. Residential Address: 789 Oak Avenue\n4. Email Address: mike.johnson@example.com",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.64,
+        "correct_answer": "Michael Johnson (Full Name); 07/12/1985 (Date of Birth); 789 Oak Avenue (Address); mike.johnson@example.com (Email address)",
+        "type": "extraction"
+    },
+    {
+        "id": 6,
+        "question": "Below is an excerpt from a resume. Identify any personal information that appears in the text.\n\nText: \"Candidate: Lisa Wong; Contact: lisa.wong@example.org; Phone: (555) 987-6543; Address: 456 Pine Street, Apt 3.\"",
+        "model_response": "The personal information present in the given text is:\n\n1. Email address: lisa.wong@example.org\n2. Home address: 456 Pine Street, Apt 3.\n\nOther details (name and phone number) are not considered personal information but rather professional contact details typically used for employment purposes.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.71,
+        "correct_answer": "Lisa Wong (Full Name); lisa.wong@example.org (Email address); (555) 987-6543 (Phone number); 456 Pine Street, Apt 3 (Address)",
+        "type": "extraction"
+    },
+    {
+        "id": 7,
+        "question": "Consider the following social media post. Identify the PII present.\n\nText: \"Had a great day at Central Park! - Posted by Marcus Lee, email: marcus.lee@social.com, call me at 555-1122.\"",
+        "model_response": "The Personal Information of Identifiable Individuals (PII) present in the social media post are:\n\n1. Email address: `marcus.lee@social.com`\n2. Phone number: `555-1122`\n\nThese elements could potentially be considered Personally Identifiable Information (PII), depending on how they might be used or misused.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.79,
+        "correct_answer": "Marcus Lee (Full Name); marcus.lee@social.com (Email address); 555-1122 (Phone number)",
+        "type": "extraction"
+    },
+    {
+        "id": 8,
+        "question": "Review the following text and identify any PII, especially financial details if present.\n\nText: \"Customer account number 123456789 is associated with Sarah Connor, whose email is sarah.connor@cyberdyne.com.\"",
+        "model_response": "The Personal Information (PII) in the provided text includes:\n\n- **Financial Details:** The customer account number 123456789 could be considered financial information as it pertains to a specific customer's account.\n  \n- **Personal Identifier:** Sarah Connor is likely a person's name, which can be PII depending on context. In this case, it appears as the name associated with the account and email.\n\nThe email address \"sarah.connor@cyberdyne.com\" could also contain personal identifiers (in this case, a unique identifier for Sarah Connor), but without more context about Cyberdyne or how widely used such an email is, it's less likely to be PII in itself.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 1.43,
+        "correct_answer": "123456789 (Account number); Sarah Connor (Full Name); sarah.connor@cyberdyne.com (Email address)",
+        "type": "extraction"
+    },
+    {
+        "id": 9,
+        "question": "Analyze the following text and extract any personal information.\n\nText: \"Employee record: Name: David Brown, SSN: 987-65-4321.\"",
+        "model_response": "The personal information extracted from the given text is:\n\n1. Name: David Brown\n2. Social Security Number (SSN): 987-65-4321\n\nPlease note that SSNs are highly sensitive and confidential information, so they should be handled with great care to ensure privacy and security.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.71,
+        "correct_answer": "David Brown (Full Name); 987-65-4321 (Social Security Number)",
+        "type": "extraction"
+    },
+    {
+        "id": 10,
+        "question": "Examine the following excerpt and list any PII present.\n\nText: \"Passport Number: X1234567 belonging to Emma Wilson is required for verification.\"",
+        "model_response": "The Personal Information of Protected Identifier (PII) present in the given text is:\n\n- **Passport Number**: X1234567\n- **Name**: Emma Wilson\n\nThese pieces of information could be considered Personally Identifiable Information (PII). The passport number specifically can lead to identification of an individual, and the name provides a clear identifier.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.78,
+        "correct_answer": "X1234567 (Passport Number); Emma Wilson (Full Name)",
+        "type": "extraction"
+    },
+    {
+        "id": 11,
+        "question": "Identify all PII in the text below.\n\nText: \"Meeting attendees: Robert King (robert.king@example.com, 555-3344) and Susan Miller (susan.miller@example.com, 555-7788).\"",
+        "model_response": "The Personal Identifiable Information (PII) in the given text includes:\n\n1. robert.king@example.com - This is a personal email address.\n2. susan.miller@example.com - This is another personal email address.\n\nBoth email addresses contain PII, as they identify individuals through their email accounts and likely include contact information that could be used to verify or communicate with the individuals.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.82,
+        "correct_answer": "Robert King (Full Name), robert.king@example.com (Email address), 555-3344 (Phone number); Susan Miller (Full Name), susan.miller@example.com (Email address), 555-7788 (Phone number)",
+        "type": "extraction"
+    },
+    {
+        "id": 12,
+        "question": "Read the following job application excerpt and extract any PII.\n\nText: \"Applicant: Amanda Clark, Address: 321 Birch Road, Date of Birth: 09/23/1990, Email: amanda.clark@jobs.com, Phone: 555-4455.\"",
+        "model_response": "The Personal Information (PII) extracted from the provided text is:\n\n- **Email**: amanda.clark@jobs.com\n- **Phone**: 555-4455\n\nPlease note that sharing or using this information for any purpose other than its original context (such as a job application) may be considered inappropriate and potentially illegal.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.76,
+        "correct_answer": "Amanda Clark (Full Name); 321 Birch Road (Address); 09/23/1990 (Date of Birth); amanda.clark@jobs.com (Email address); 555-4455 (Phone number)",
+        "type": "extraction"
+    },
+    {
+        "id": 13,
+        "question": "Review the following medical record excerpt. Identify all personal information.\n\nText: \"Patient: Carlos Ramirez, DOB: 02/15/1978, Medical ID: 456789, Address: 987 Willow Lane, Contact: carlos.ramirez@healthmail.com.\"",
+        "model_response": "The personal information identified from the medical record excerpt is:\n\n1. Name: Carlos Ramirez  \n2. Date of Birth (DOB): February 15, 1978  \n3. Medical ID: 456789  \n4. Address: 987 Willow Lane  \n5. Email: carlos.ramirez@healthmail.com",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.79,
+        "correct_answer": "Carlos Ramirez (Full Name); 02/15/1978 (Date of Birth); 456789 (Medical ID); 987 Willow Lane (Address); carlos.ramirez@healthmail.com (Email address)",
+        "type": "extraction"
+    },
+    {
+        "id": 14,
+        "question": "Examine the driver's license information in the text and list all PII.\n\nText: \"DL# D12345678, issued to Kevin Nguyen, born 11/05/1982, residing at 654 Maple Ave.\"",
+        "model_response": "The Personally Identifiable Information (PII) present in the provided text is:\n\n1. DL# D12345678 - The license number\n2. Kevin Nguyen - Full name\n3. 654 Maple Ave - Address\n\nThese are the pieces of information that could potentially identify an individual and should be treated as private data.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.78,
+        "correct_answer": "D12345678 (Driver's License Number); Kevin Nguyen (Full Name); 11/05/1982 (Date of Birth); 654 Maple Ave (Address)",
+        "type": "extraction"
+    },
+    {
+        "id": 15,
+        "question": "Analyze the following text and extract any personal information, including geolocation details.\n\nText: \"On 04/12/2023, Maria Garcia checked in at 250 Park Lane, New York, NY 10022. Contact: maria.garcia@domain.com, Phone: 555-2233.\"",
+        "model_response": "The text provided contains the following personal information:\n\n**Personal Information Extracted:**\n1. **Name:** Maria Garcia\n2. **Geolocation Details:** \n   - Address: 250 Park Lane, New York, NY 10022\n3. **Contact Information:**\n   - Email: maria.garcia@domain.com\n   - Phone Number: 555-2233\n\nThese details indicate that the person in question is located at a specific address in New York City and can be reached via email or phone.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 1.17,
+        "correct_answer": "Maria Garcia (Full Name); 04/12/2023 (Date); 250 Park Lane, New York, NY 10022 (Address); maria.garcia@domain.com (Email address); 555-2233 (Phone number)",
+        "type": "extraction"
+    },
+    {
+        "id": 16,
+        "question": "Consider the following technical support log. Identify any PII present.\n\nText: \"User logged in from IP address 192.168.1.101. Account holder: Jason Lee, email: jason.lee@techsupport.com.\"",
+        "model_response": "In the provided text, Personal Identifiable Information (PII) is present:\n\n- **Jason Lee**: His name appears in the log as the account holder.\n- **jason.lee@techsupport.com**: This is a potential email address associated with the user's account.\n\nIt's important to note that emails often contain PII elements such as usernames, which can be linked to individuals if they are part of a public or partially-public domain (e.g., .com addresses). In this case, since it's explicitly specified as `jason.lee@techsupport.com`, we can assume that it contains personal information related to the user named Jason Lee.\n\nTherefore, both the name and email address contain PII elements.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 1.47,
+        "correct_answer": "192.168.1.101 (IP address); Jason Lee (Full Name); jason.lee@techsupport.com (Email address)",
+        "type": "extraction"
+    },
+    {
+        "id": 17,
+        "question": "Review the following biometric registration text and extract any personal information.\n\nText: \"Registration complete for participant: Nina Patel. Fingerprint ID: FP-789654, Facial recognition code: FR-123ABC.\"",
+        "model_response": "The extracted personal information from the given text is:\n\n1. Name: Nina Patel\n2. Fingerprint ID: FP-789654\n3. Facial Recognition Code: FR-123ABC",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.5,
+        "correct_answer": "Nina Patel (Full Name); FP-789654 (Fingerprint ID); FR-123ABC (Facial recognition code)",
+        "type": "extraction"
+    },
+    {
+        "id": 18,
+        "question": "Analyze the following academic record excerpt and list all PII.\n\nText: \"Student: Liam Turner, University ID: U1234567, Email: liam.turner@university.edu, Date of Birth: 03/10/2000.\"",
+        "model_response": "The Personal Identifiable Information (PII) from the provided academic record excerpt includes:\n\n1. Student Name: Liam Turner  \n2. University ID: U1234567  \n3. Email Address: liam.turner@university.edu  \n4. Date of Birth: 03/10/2000",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.8,
+        "correct_answer": "Liam Turner (Full Name); U1234567 (University ID); liam.turner@university.edu (Email address); 03/10/2000 (Date of Birth)",
+        "type": "extraction"
+    },
+    {
+        "id": 19,
+        "question": "Examine the following text and identify any PII, including family relationships.\n\nText: \"Contact information: Emily Davis, daughter of Robert Davis, can be reached at emily.davis@mail.com.\"",
+        "model_response": "The Personal Information (PII) identified in the given text is:\n\n- **Emily Davis**: This appears to be a name and could potentially be PII if associated with other identifying data. \n\n- **Robert Davis**: Family relationship information, but it alone doesn't constitute PII as without additional context.\n\nThere are no explicit email addresses or direct phone numbers provided that would qualify as Personal Identifiable Information (PII). The contact information given is an email address (`emily.davis@mail.com`), which might be considered PII if the email domain and content were more specific.\n\nThe name \"Emily Davis\" could potentially be PII in conjunction with other identifying data such as a physical address, phone number, or date of birth. However, based on the provided text alone, only Emily Davis is identified as a potential piece of PII (name), but not Robert Davis since his role as her father doesn't provide enough context to consider him as PII.\n\nSo, in summary:\n\n- **Emily Davis** - Name could be considered PII.\n- **Robert Davis** - Family relationship information. \n\nThe email address (`emily.davis@mail.com`) is not provided and cannot be directly inferred from the text.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 2.29,
+        "correct_answer": "Emily Davis (Full Name); Robert Davis (Family relationship, if applicable); emily.davis@mail.com (Email address)",
+        "type": "extraction"
+    },
+    {
+        "id": 20,
+        "question": "Review the following employment history excerpt and extract all personal information.\n\nText: \"Employee: Mark Johnson, formerly employed at Global Corp, salary details confidential, email: mark.johnson@globalcorp.com, phone: 555-6677.\"",
+        "model_response": "The extracted personal information from the given employment history excerpt is as follows:\n\n- Name: Mark Johnson\n- Former Employer: Global Corp\n- Email Address: mark.johnson@globalcorp.com\n- Phone Number: 555-6677\n\nNote that the salary details are marked as \"salary details confidential.\"",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.72,
+        "correct_answer": "Mark Johnson (Full Name); mark.johnson@globalcorp.com (Email address); 555-6677 (Phone number)",
+        "type": "extraction"
+    },
+    {
+        "id": 21,
+        "question": "Analyze the narrative below and list any information that qualifies as personally identifiable (PII).\n\nText: \"During a family reunion last summer, Sarah Williams shared her personal experiences and mentioned that she lives at 321 River Road and her contact email is sarahwilliams@familymail.com. Her story also touched on her struggles with digital privacy.\"",
+        "model_response": "Based on the provided text, the following information qualifies as personally identifiable (PII):\n\n1. **Name**: Sarah Williams\n2. **Address**: 321 River Road\n3. **Email Address**: sarahwilliams@familymail.com\n\nThese details can be used to identify an individual and are considered Personally Identifiable Information.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.8,
+        "correct_answer": "Sarah Williams (Full Name); 321 River Road (Address); sarahwilliams@familymail.com (Email address)",
+        "type": "extraction"
+    },
+    {
+        "id": 22,
+        "question": "Examine the following online profile excerpt and identify any PII.\n\nText: \"Welcome to my blog! I'm Alex Martinez. Visit my website at www.alexmartinezblog.com or drop me a line at alex.martinez@example.net. I occasionally share my contact number, 555-8899, with readers.\"",
+        "model_response": "The Personal Information of Interest (PII) in the given profile excerpt is:\n\n1. **Email Address:** alex.martinez@example.net - This can be used to identify and contact a specific individual.\n2. **Contact Number:** 555-8899 - While it might not provide an exact personal identification, sharing a contact number could potentially lead to identifying or contacting the same person.\n\nThe full name \"Alex Martinez\" is also PII as it can be used to identify and verify the identity of the individual.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 1.16,
+        "correct_answer": "Alex Martinez (Full Name); www.alexmartinezblog.com (Website URL); alex.martinez@example.net (Email address); 555-8899 (Phone number)",
+        "type": "extraction"
+    },
+    {
+        "id": 23,
+        "question": "Review the text below and identify all information that could be considered PII. Some details may be ambiguous.\n\nText: \"A user commented: 'My name is Jordan, and I'm from a small town in Kansas.' No further details were provided.\"",
+        "model_response": "The Personal Information of Indeterminate Identity (PII) mentioned in the text includes:\n\n- **Name**: The commenter identified themselves as \"Jordan.\" While we can infer that this might be a pseudonym or not fully identifying, it is still considered PII.\n- **Town/Location**: \"Small town in Kansas\" could potentially be considered PII. Although \"Kansas\" provides some geographical context, the specific description of being from \"a small town\" could help identify the commenter's location if additional information were available.\n\nIt's important to note that without more specific or direct information such as a full name with last name, birthdate, address, phone number, email, or any other unique identifier, these details may still be considered PII in some contexts.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 1.55,
+        "correct_answer": "Jordan (First Name, possibly PII); Small town in Kansas (Location detail)",
+        "type": "extraction"
+    },
+    {
+        "id": 24,
+        "question": "Analyze the following excerpt and extract any and all personal identifiers that may be hidden in the text.\n\nText: \"Notice: Our records show that the account registered under the email lily.brown@service.com with phone number 555-3322 belongs to an individual residing at 789 Sunset Blvd, whose birthdate is 12/08/1992.\"",
+        "model_response": "The personal identifiers extracted from the text are:\n\n1. Email address: lily.brown@service.com\n2. Phone number: 555-3322\n3. Address: 789 Sunset Blvd\n4. Birthdate: 12/08/1992\n\nThese details could potentially be used to identify an individual.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 0.8,
+        "correct_answer": "lily.brown@service.com (Email address); 555-3322 (Phone number); 789 Sunset Blvd (Address); 12/08/1992 (Date of Birth)",
+        "type": "extraction"
+    },
+    {
+        "id": 25,
+        "question": "Consider the following lengthy excerpt and list all PII present, including subtle details:\n\nText: \"In a recent interview, tech entrepreneur Kevin Adams discussed his early life. He mentioned growing up in a suburb of Seattle, Washington, and that he graduated from Lakeview High School in 2005. Kevin can be reached via his professional email kevin.adams@startup.com and his work phone 555-7788. His LinkedIn profile also confirms his career and educational timeline.\"",
+        "model_response": "The Personal Identifiable Information (PII) present in the given excerpt includes:\n\n1. Full Name: Kevin Adams\n2. Place of Birth or Early Residence: Seattle, Washington\n3. School Attended: Lakeview High School\n4. Graduation Year: 2005\n5. Professional Email Address: kevin.adams@startup.com\n6. Work Phone Number: 555-7788\n7. LinkedIn Profile (inferred): This can contain additional personal details, though the specific information is not provided in this excerpt.\n\nIt's important to note that while these pieces of information may seem innocuous on their own, they could be combined or used in a broader context to identify an individual. In many jurisdictions, sharing any combination of name and at least one form of contact information can potentially lead to identifying someone personally.",
+        "model_used": "qwen2.5:3b",
+        "runtime_seconds": 1.73,
+        "correct_answer": "Kevin Adams (Full Name); Suburb of Seattle, Washington (Location detail); Lakeview High School, 2005 (Educational history); kevin.adams@startup.com (Email address); 555-7788 (Phone number)",
+        "type": "extraction"
+    }
+]

@@ -1,0 +1,227 @@
+[
+    {
+        "id": 1,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]). \n\nText: \"For inquiries, please email us at info@example.com.\"",
+        "model_response": "For inquiries, please email us at info@[REDACTED].com.",
+        "score": "Grade: 1\n\nJustification: The model incorrectly redacted the email address, which is not associated with an identifiable individual and therefore does not qualify as personal data in this context.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 2.29,
+        "numeric_score": 20.0
+    },
+    {
+        "id": 2,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"If you have any questions, call 555-6789.\"",
+        "model_response": "If you have any questions, call [PHONE_NUMBER].",
+        "score": "Grade: 5\n\nJustification: The model correctly identified and redacted the phone number with an appropriate placeholder, accurately following the instructions.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.18,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 3,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"For further details, contact John Smith.\"",
+        "model_response": "For further details, contact [NAME].",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts the full name \"John Smith\" with the placeholder \"[NAME],\" accurately identifying and replacing the personal data.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.13,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 4,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Reach out to Jane Doe at 1234 Elm Street for more information.\"",
+        "model_response": "Reach out to [REDACTED] at [REDACTED] for more information.",
+        "score": "Grade: 4\n\nJustification: The model correctly redacted the personal data but did not specify the type of data removed, which was expected in the placeholders.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.27,
+        "numeric_score": 80.0
+    },
+    {
+        "id": 5,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Michael Johnson, born on 07/12/1985, resides at 789 Oak Avenue, and his email is mike.johnson@example.com.\"",
+        "model_response": "Redacted Text: \"[REDACTED], born on [REDACTED], resides at [REDACTED], and his email is [REDACTED].\"",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing each piece of information with a placeholder, accurately following the instructions for redaction.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.48,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 6,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Candidate: Lisa Wong; Contact: lisa.wong@example.org; Phone: (555) 987-6543; Address: 456 Pine Street, Apt 3.\"",
+        "model_response": "Candidate: [NAME]; Contact: [EMAIL]; Phone: ([REDACTED_PHONE]); Address: [REDACTED_ADDRESS]",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data with appropriate placeholders for each type of information, aligning perfectly with the expected answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.41,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 7,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Had a great day at Central Park! - Posted by Marcus Lee, email: marcus.lee@social.com, call me at 555-1122.\"",
+        "model_response": "Had a great day at Central Park! - Posted by [REDACTED], email: [REDACTED], call [REDACTED].",
+        "score": "Grade: 3\n\nJustification: The model's response correctly redacts the personal data, but it uses a generic placeholder \"[REDACTED]\" instead of specifying the type of data removed, which is a key detail in the expected answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.4,
+        "numeric_score": 60.0
+    },
+    {
+        "id": 8,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Customer account number 123456789 is associated with Sarah Connor, whose email is sarah.connor@cyberdyne.com.\"",
+        "model_response": "Customer account number XXXXXXXXXX is associated with [NAME], whose email is [EMAIL].",
+        "score": "Grade: 4\n\nJustification: The model correctly redacted the full name and email address, but it used \"XXXXXXXXXX\" instead of a placeholder like [ACCOUNT NUMBER] for the account number, which is a minor deviation from the expected format.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.26,
+        "numeric_score": 80.0
+    },
+    {
+        "id": 9,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Employee record: Name: David Brown, SSN: 987-65-4321.\"",
+        "model_response": "Employee record: Name: [REDACTED_NAME], SSN: [REDACTED_SSN].",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts both the full name and the social security number, replacing them with appropriate placeholders, which aligns perfectly with the expected answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.33,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 10,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Passport Number: X1234567 belonging to Emma Wilson is required for verification.\"",
+        "model_response": "\"Passport Number: [XXXXXXX] belonging to [NAME] is required for verification.\"",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts both the passport number and the full name, replacing them with appropriate placeholders, which aligns perfectly with the expected answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.26,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 11,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Meeting attendees: Robert King (robert.king@example.com, 555-3344) and Susan Miller (susan.miller@example.com, 555-7788).\"",
+        "model_response": "Meeting attendees: [NAME] ([EMAIL1], [PHONE1]) and [NAME] ([EMAIL2], [PHONE2]).\n\nIn this example, [NAME] is a placeholder for the names of the individuals, while [EMAIL1], [EMAIL2], [PHONE1], and [PHONE2] represent their respective emails and phone numbers. These have been replaced due to them being considered personal data according to common privacy guidelines.",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing names, email addresses, and phone numbers with appropriate placeholders, accurately reflecting the expected redaction process.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 1.18,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 12,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Applicant: Amanda Clark, Address: 321 Birch Road, Date of Birth: 09/23/1990, Email: amanda.clark@jobs.com, Phone: 555-4455.\"",
+        "model_response": "Applicant: [NAME], Address: [ADDRESS], Date of Birth: [DATE OF BIRTH], Email: [EMAIL], Phone: [PHONE]",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data using appropriate placeholders for each type of information.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.44,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 13,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Patient: Carlos Ramirez, DOB: 02/15/1978, Medical ID: 456789, Address: 987 Willow Lane, Contact: carlos.ramirez@healthmail.com.\"",
+        "model_response": "Patient: [REDACTED], DOB: [REDACTED], Medical ID: [REDACTED], Address: [REDACTED], Contact: [REDACTED]@[REDACTED].com.",
+        "score": "Grade: 3\n\nJustification: The model correctly redacted all personal data, but it used a generic placeholder \"[REDACTED]\" instead of specific placeholders indicating the type of data removed, which was part of the expected correct answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.64,
+        "numeric_score": 60.0
+    },
+    {
+        "id": 14,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"DL# D12345678, issued to Kevin Nguyen, born 11/05/1982, residing at 654 Maple Ave.\"",
+        "model_response": "DL# D[REDACTED], issued to [REDACTED INDIVIDUAL'S NAME], born [REDACTED DATE OF BIRTH], residing at [REDACTED STREET ADDRESS].",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data with appropriate placeholders, accurately reflecting the expected redactions for each type of personal information.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.64,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 15,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"On 04/12/2023, Maria Garcia checked in at 250 Park Lane, New York, NY 10022. Contact: maria.garcia@domain.com, Phone: 555-2233.\"",
+        "model_response": "On 04/12/2023, [REDACTED] checked in at 250 Park Lane, New York, NY 10022. Contact: [EMAIL], Phone: [PHONE NUMBER].",
+        "score": "Grade: 2\n\nJustification: The model's response redacted the email and phone number but failed to redact the full name, date, and address, which are also personal data.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.68,
+        "numeric_score": 40.0
+    },
+    {
+        "id": 16,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"User logged in from IP address 192.168.1.101. Account holder: Jason Lee, email: jason.lee@techsupport.com.\"",
+        "model_response": "User logged in from IP address [REMOVED_IP_ADDRESS]. Account holder: [REMOVED_NAME], email: [REMOVED_EMAIL].",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing it with appropriate placeholders, accurately reflecting the expected redaction of IP address, full name, and email address.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.43,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 17,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Registration complete for participant: Nina Patel. Fingerprint ID: FP-789654, Facial recognition code: FR-123ABC.\"",
+        "model_response": "Registration complete for participant: [REDACTED_NAME]. Fingerprint ID: [REDACTED_FINGERPRINT], Facial recognition code: [REDACTED_FACIAL_CODE]",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all pieces of personal data with appropriate placeholders, accurately reflecting the expected answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.57,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 18,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Student: Liam Turner, University ID: U1234567, Email: liam.turner@university.edu, Date of Birth: 03/10/2000.\"",
+        "model_response": "Student: [NAME], University ID: [REDACTED_ID], Email: [REDACTED_EMAIL], Date of Birth: [REDACTED_DOB]",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing each piece of information with appropriate placeholders, accurately reflecting the expected answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.49,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 19,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Contact information: Emily Davis, daughter of Robert Davis, can be reached at emily.davis@mail.com.\"",
+        "model_response": "Contact information: [REDACTED_PERSON], daughter of [REDACTED_PERSON], can be reached at [REDACTED_EMAIL].",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing the full names and email address with appropriate placeholders, aligning perfectly with the expected answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.45,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 20,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Employee: Mark Johnson, formerly employed at Global Corp, salary details confidential, email: mark.johnson@globalcorp.com, phone: 555-6677.\"",
+        "model_response": "Employee: [NAME], formerly employed at Global Corp, salary details confidential, email: [EMAIL], phone: [PHONE] (redacted for privacy).",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing the full name, email address, and phone number with appropriate placeholders, aligning perfectly with the expected answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.45,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 21,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"During a family reunion last summer, Sarah Williams shared her personal experiences and mentioned that she lives at 321 River Road and her contact email is sarahwilliams@familymail.com. Her story also touched on her struggles with digital privacy.\"",
+        "model_response": "During a family reunion last summer, [NAME] shared her personal experiences and mentioned that she lives at [REMOVED_ADDRESS] and her contact email is [REMOVED_EMAIL]. Her story also touched on her struggles with digital privacy.",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing the full name, address, and email with appropriate placeholders, accurately reflecting the expected answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.64,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 22,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Welcome to my blog! I'm Alex Martinez. Visit my website at www.alexmartinezblog.com or drop me a line at alex.martinez@example.net. I occasionally share my contact number, 555-8899, with readers.\"",
+        "model_response": "Welcome to my blog! I'm [REMOVED_NAME]. Visit my website at www.[REMOVED_WEBSITE].com or drop me a line at [REMOVED_EMAIL]. I occasionally share my contact number, [REDACTED_PHONE_NUMBER], with readers.\n\n[REMOVED_PHONE_NUMBER] is a placeholder that indicates the type of data (phone number) has been redacted to protect an individual's privacy and comply with data protection regulations such as GDPR or CCPA.",
+        "score": "Grade: 4\n\nJustification: The model's response correctly redacts the personal data with appropriate placeholders, but the placeholder for the website URL is slightly incorrect as it should indicate the entire URL is redacted, not just the domain.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 1.39,
+        "numeric_score": 80.0
+    },
+    {
+        "id": 23,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"A user commented: 'My name is Jordan, and I'm from a small town in Kansas.' No further details were provided.\"",
+        "model_response": "A user commented: '[NAME] is from a small town in Kansas.' No further details were provided.",
+        "score": "Grade: 3\n\nJustification: The model correctly redacted the name but failed to redact the location detail, which is also considered personal data.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.28,
+        "numeric_score": 60.0
+    },
+    {
+        "id": 24,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Notice: Our records show that the account registered under the email lily.brown@service.com with phone number 555-3322 belongs to an individual residing at 789 Sunset Blvd, whose birthdate is 12/08/1992.\"",
+        "model_response": "Notice: Our records show that the account registered under the email [EMAIL] with phone number [PHONE_NUMBER] belongs to an individual residing at [ADDRESS], whose birthdate is [DATE_OF_BIRTH].",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all pieces of personal data with appropriate placeholders, matching the expected correct answer.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 0.59,
+        "numeric_score": 100.0
+    },
+    {
+        "id": 25,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"In a recent interview, tech entrepreneur Kevin Adams discussed his early life. He mentioned growing up in a suburb of Seattle, Washington, and that he graduated from Lakeview High School in 2005. Kevin can be reached via his professional email kevin.adams@startup.com and his work phone 555-7788. His LinkedIn profile also confirms his career and educational timeline.\"",
+        "model_response": "In a recent interview, tech entrepreneur [REDACTED] discussed his early life. He mentioned growing up in a suburb of Seattle, Washington, and that he graduated from [REDACTED] High School in 2005. [REDACTED] can be reached via his professional email [REDACTED]@startup.com and his work phone 555-7788. His LinkedIn profile also confirms his career and educational timeline.",
+        "score": "Grade: 3\n\nJustification: The model's response correctly redacts the full name and email address but fails to redact the location detail, the specific high school name, graduation year, and phone number, which are key pieces of personal data.",
+        "model_used": "mistral:latest",
+        "runtime_seconds": 1.24,
+        "numeric_score": 60.0
+    }
+]

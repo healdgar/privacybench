@@ -1,0 +1,9 @@
+#help me omit common files from the repo such as .env, node_modules, etc    
+node_modules
+.env
+.DS_Store
+.vscode
+.idea
+.cache
+dist
+coverage

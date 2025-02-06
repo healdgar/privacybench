@@ -7,7 +7,7 @@
 - Gemma2:9B shows remarkable performance given its size. It nearly matches GPT-4o's performance at this task, despite being a much smaller model that can be run on the modest processing resources of a decent workstation. This makes it a possible good candidate for additional fine-tuning to the specific task to further improve its scoring. Its most significant error is that it identified a generic email address as personal data ([info@example.com](mailto:info@example.com)) and redacted it, which is a conservative error.
 - Gpt-4o performed very well, but interestingly found flaws in its own output.
 - To review AI-generated summaries of each model's performance see the pii_redaction_task folder in the repo, for example ![[this gpt-generated grading summary of Gemma2:9b](grading_summary-gemma2-9b-gpt-4o-privacybench_PII_redaction.txt)]
-![Average score per question](overall_scores_bar_graph.png)
+![Average score per question](Figure_1.png)
 
 ## Explanation
 

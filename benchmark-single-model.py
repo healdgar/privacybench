@@ -30,7 +30,7 @@ def sanitize_model_name(model_name):
 USE_ONLINE_API = True
 
 # Question source file and its base name (without extension)
-QUESTION_SOURCE_FILE = "privacybench_PII_redaction.json"
+QUESTION_SOURCE_FILE = "evaluation_questions/privacybench_PII_redaction.json"
 QUESTION_SOURCE_BASENAME = os.path.splitext(os.path.basename(QUESTION_SOURCE_FILE))[0]
 
 # Tested model (the model used for benchmarking)

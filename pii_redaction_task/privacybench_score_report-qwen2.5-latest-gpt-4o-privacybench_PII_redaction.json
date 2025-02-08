@@ -1,9 +1,9 @@
 {
     "qwen2.5:latest": {
-        "overall_score": 92.8,
+        "overall_score": 91.2,
         "question_breakdown": {
             "1": {
-                "score": 100.0,
+                "score": 60.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]). \n\nText: \"For inquiries, please email us at info@example.com.\""
             },
             "2": {
@@ -59,7 +59,7 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"DL# D12345678, issued to Kevin Nguyen, born 11/05/1982, residing at 654 Maple Ave.\""
             },
             "15": {
-                "score": 60.0,
+                "score": 100.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"On 04/12/2023, Maria Garcia checked in at 250 Park Lane, New York, NY 10022. Contact: maria.garcia@domain.com, Phone: 555-2233.\""
             },
             "16": {
@@ -91,7 +91,7 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Welcome to my blog! I'm Alex Martinez. Visit my website at www.alexmartinezblog.com or drop me a line at alex.martinez@example.net. I occasionally share my contact number, 555-8899, with readers.\""
             },
             "23": {
-                "score": 60.0,
+                "score": 20.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"A user commented: 'My name is Jordan, and I'm from a small town in Kansas.' No further details were provided.\""
             },
             "24": {

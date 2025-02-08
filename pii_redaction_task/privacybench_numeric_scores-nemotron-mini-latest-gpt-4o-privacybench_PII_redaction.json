@@ -2,53 +2,53 @@
     {
         "id": 1,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]). \n\nText: \"For inquiries, please email us at info@example.com.\"",
-        "model_response": "\"For inquiries, please email us at [REDACTED].\"",
-        "score": "Grade: 1\n\nJustification: The model incorrectly redacted the email address, which is not associated with an identifiable individual and therefore does not qualify as personal data in this context.",
+        "model_response": "\"For inquiries, please email us at [REDACTED] at example.com.\"",
+        "score": "Grade: 1\n\nJustification: The model incorrectly redacted the email address, which is not associated with an identifiable individual and thus does not qualify as personal data in this context.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 4.83,
+        "runtime_seconds": 4.95,
         "numeric_score": 20.0
     },
     {
         "id": 2,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"If you have any questions, call 555-6789.\"",
-        "model_response": "\"If you require assistance or have queries, please contact our support team at [PHONE NUMBER].",
-        "score": "Grade: 5\n\nJustification: The model correctly redacted the phone number by replacing it with the placeholder [PHONE NUMBER], which aligns with the expected redaction of personal data.",
+        "model_response": "\"If you have any questions, call [PHONE_NUMBER].\"",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts the phone number by replacing it with the placeholder [PHONE_NUMBER], which aligns perfectly with the expected redaction of personal data.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.24,
+        "runtime_seconds": 0.19,
         "numeric_score": 100.0
     },
     {
         "id": 3,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"For further details, contact John Smith.\"",
-        "model_response": "\"For further details, contact [CONTACT]",
-        "score": "Grade: 2\n\nJustification: The model's response redacts the contact information but fails to specifically redact the full name \"John Smith,\" which is the key piece of personal data in the text.",
+        "model_response": "\"For further details, contact [REDACTED].\"",
+        "score": "Grade: 4\n\nJustification: The model correctly redacted the personal data, but it would be more informative to use a specific placeholder like [FULL NAME] instead of a generic [REDACTED].",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.14,
-        "numeric_score": 40.0
+        "runtime_seconds": 0.23,
+        "numeric_score": 80.0
     },
     {
         "id": 4,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Reach out to Jane Doe at 1234 Elm Street for more information.\"",
-        "model_response": "\"Reach out to someone who may or may not be Jane Doe, but whose identity is unknown and cannot therefore be considered personal data. For redaction purposes, this has been replaced with [REDACTED].\"",
-        "score": "Grade: 1\n\nJustification: The model's response fails to correctly identify and redact the personal data (name and address) and instead provides an inaccurate and irrelevant explanation, making it a poor response.",
+        "model_response": "\"Reach out to someone in that location for further details.\"",
+        "score": "Grade: 2\n\nJustification: The model's response is somewhat relevant as it removes personal data, but it does not use placeholders to indicate the type of data removed, which is a key requirement of the task.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.54,
-        "numeric_score": 20.0
+        "runtime_seconds": 0.17,
+        "numeric_score": 40.0
     },
     {
         "id": 5,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Michael Johnson, born on 07/12/1985, resides at 789 Oak Avenue, and his email is mike.johnson@example.com.\"",
-        "model_response": "\"A person residing at 789 Oak Avenue, born in July of 1985, whose email is [email].",
-        "score": "Grade: 3\n\nJustification: The model's response correctly redacts the email address but fails to redact the full name and the specific date of birth, which are key details that qualify as personal data.",
+        "model_response": "\"A resident of 789 Oak Avenue was born in [DATE] and has the email address [EMAIL].",
+        "score": "Grade: 2\n\nJustification: The model's response correctly redacts the date and email but fails to redact the full name and address, which are key details of personal data.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.31,
-        "numeric_score": 60.0
+        "runtime_seconds": 0.38,
+        "numeric_score": 40.0
     },
     {
         "id": 6,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Candidate: Lisa Wong; Contact: lisa.wong@example.org; Phone: (555) 987-6543; Address: 456 Pine Street, Apt 3.\"",
         "model_response": "\"Candidate: [REDACTED]; Contact: [REDACTED]; Phone: [REDACTED]; Address: [REDACTED]\"",
-        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing it with placeholders, which aligns with the task requirements.",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data in the text, replacing each piece with a placeholder, which aligns with the task requirements.",
         "model_used": "nemotron-mini:latest",
         "runtime_seconds": 0.34,
         "numeric_score": 100.0
@@ -56,163 +56,163 @@
     {
         "id": 7,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Had a great day at Central Park! - Posted by Marcus Lee, email: marcus.lee@social.com, call me at 555-1122.\"",
-        "model_response": "\"A wonderful visit to Central Park today! - Shared on social media by [SOCIAL]. Please feel free to reach out via phone or email if you'd like more information from someone named Marcus Lee ([EMAIL])\"",
-        "score": "Grade: 2\n\nJustification: The model's response fails to properly redact the full name, email, and phone number, only partially addressing the email and not using the correct placeholders, which makes it mostly incorrect.",
+        "model_response": "\"Had a great day at Central Park! - (Posted by [REDACTED], email: [REDACTED], call me at 555-1122.\"",
+        "score": "Grade: 3\n\nJustification: The model correctly redacted the name and email address but failed to redact the phone number, which is a key piece of personal data.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.47,
-        "numeric_score": 40.0
+        "runtime_seconds": 0.41,
+        "numeric_score": 60.0
     },
     {
         "id": 8,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Customer account number 123456789 is associated with Sarah Connor, whose email is sarah.connor@cyberdyne.com.\"",
-        "model_response": "\"Customer account number **[REDACTED]** is associated with a customer named Sarah Connor, whose email address is sarah.connor@cyberdyne.com.\"",
-        "score": "Grade: 2\n\nJustification: The model's response only redacts the account number and fails to redact the full name and email address, which are key pieces of personal data that should have been removed.",
+        "model_response": "\"Customer account number [ACCOUNT] is associated with a customer who's name and email address have been redacted.\"",
+        "score": "Grade: 3\n\nJustification: The model's response correctly redacts the personal data but fails to specify the types of data redacted, which is a key detail in the expected answer.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.37,
-        "numeric_score": 40.0
+        "runtime_seconds": 0.29,
+        "numeric_score": 60.0
     },
     {
         "id": 9,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Employee record: Name: David Brown, SSN: 987-65-4321.\"",
-        "model_response": "\"Employee record: [SSN].\"",
+        "model_response": "\"Employee record: [SSN]\"",
         "score": "Grade: 2\n\nJustification: The model's response redacted the Social Security Number but failed to redact the full name, which is also personal data.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.13,
+        "runtime_seconds": 0.14,
         "numeric_score": 40.0
     },
     {
         "id": 10,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Passport Number: X1234567 belonging to Emma Wilson is required for verification.\"",
-        "model_response": "\"Verification requires Passport Number:[REDACTED], owned by Emma Wilson.\"",
-        "score": "Grade: 2\n\nJustification: The model's response only redacts the passport number but fails to redact the full name \"Emma Wilson,\" which is a key piece of personal data that should have been replaced with a placeholder.",
+        "model_response": "\"Required Passport Information: [PASSPORT_NUMBER] belongs to [REDACTED]\"",
+        "score": "Grade: 3\n\nJustification: The model correctly redacted the passport number but used inconsistent placeholders and did not specify the type of personal data for the name, which is a key detail.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.3,
-        "numeric_score": 40.0
+        "runtime_seconds": 0.34,
+        "numeric_score": 60.0
     },
     {
         "id": 11,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Meeting attendees: Robert King (robert.king@example.com, 555-3344) and Susan Miller (susan.miller@example.com, 555-7788).\"",
-        "model_response": "\"Meeting attendees: [ROBERT_KING] and [SUSAN_MILLER].\"",
-        "score": "Grade: 2\n\nJustification: The model's response redacts the full names but fails to redact the email addresses and phone numbers, which are also personal data.",
+        "model_response": "\"Meeting attendees: [REDACTED] and [REDACTED].\"",
+        "score": "Grade: 2\n\nJustification: The model's response redacts the entire information instead of replacing each piece of personal data with specific placeholders indicating the type of data removed, which is a key requirement of the task.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.25,
+        "runtime_seconds": 0.21,
         "numeric_score": 40.0
     },
     {
         "id": 12,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Applicant: Amanda Clark, Address: 321 Birch Road, Date of Birth: 09/23/1990, Email: amanda.clark@jobs.com, Phone: 555-4455.\"",
-        "model_response": "\"Applicant: [REDACTED], Address: [REDACTED], Date of Birth: [REDACTED], Email: [REDACTED], Phone: [REDACTED].\"",
-        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing each piece of information with a placeholder, fully aligning with the expected redaction requirements.",
+        "model_response": "\"Candidate: [REDACTED], Address: [REDACTED], Date of Birth: [REDACTED], Email: [REDACTED], Phone: [REDACTED].\"",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing each piece of information with a placeholder, fully complying with the redaction requirements.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.41,
+        "runtime_seconds": 0.42,
         "numeric_score": 100.0
     },
     {
         "id": 13,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Patient: Carlos Ramirez, DOB: 02/15/1978, Medical ID: 456789, Address: 987 Willow Lane, Contact: carlos.ramirez@healthmail.com.\"",
-        "model_response": "\"Consultant: [MEDICAL_ID]\"",
-        "score": "Grade: 0\n\nJustification: The model's response is not related to the question, as it incorrectly identifies the role as \"Consultant\" and only redacts the medical ID, failing to address the other pieces of personal data in the text.",
+        "model_response": "\"Medical Record: [ID: 456789], Patient Information: Carlos Ramirez (DOB: [DATE], Contact Email: carlos.ramirez@[REMOVED].",
+        "score": "Grade: 2\n\nJustification: The model's response fails to redact the full name, address, and does not use consistent placeholders for personal data, making it mostly incorrect in terms of redaction requirements.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.15,
-        "numeric_score": 0.0
+        "runtime_seconds": 0.44,
+        "numeric_score": 40.0
     },
     {
         "id": 14,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"DL# D12345678, issued to Kevin Nguyen, born 11/05/1982, residing at 654 Maple Ave.\"",
-        "model_response": "\" DL# [REDACTED], issued to [REDACTED] , born [REDACTED], residing at [REDACTED]\"",
-        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all pieces of personal data in the text, replacing them with placeholders, which aligns perfectly with the expected answer.",
+        "model_response": "DL# [REDACTED], issued to [REDACTED] on [REDACTED], residing at [REDACTED].",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing each piece of information with a placeholder, accurately addressing the redaction task.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.39,
+        "runtime_seconds": 0.31,
         "numeric_score": 100.0
     },
     {
         "id": 15,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"On 04/12/2023, Maria Garcia checked in at 250 Park Lane, New York, NY 10022. Contact: maria.garcia@domain.com, Phone: 555-2233.\"",
-        "model_response": "\"On 04/12/2023, Maria [NAME] checked in at 250 Park Lane, New York, NY 10022. Contact: [REDACTED], Phone: [REDACTED].\"",
-        "score": "Grade: 2\n\nJustification: The model's response only partially redacts the personal data, failing to redact the full name, date, and address, and uses inconsistent placeholders, making it mostly incorrect.",
+        "model_response": "\"On 04/12/2023, [REDACTED] checked in at 250 Park Lane, New York, NY 10022. Contact: [REDACTED], Phone: [REDACTED].\"",
+        "score": "Grade: 3\n\nJustification: The model correctly redacted the full name, email address, and phone number, but it failed to redact the date and address, which are also considered personal data.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.53,
-        "numeric_score": 40.0
+        "runtime_seconds": 0.55,
+        "numeric_score": 60.0
     },
     {
         "id": 16,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"User logged in from IP address 192.168.1.101. Account holder: Jason Lee, email: jason.lee@techsupport.com.\"",
-        "model_response": "\"User logged in from IP address [IP ADDRESS]. Account holder: [ACCOUNT HOLDER], email: [EMail].\"",
-        "score": "Grade: 4\n\nJustification: The model's response correctly redacts the IP address and the account holder's name, but the placeholder for the email address is inconsistent with the format used for the other placeholders.",
+        "model_response": "Text: \"User logged in from IP address [IP]. Account holder: [NAME], email: [EMAIL].\"",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing the IP address, full name, and email address with appropriate placeholders, aligning perfectly with the expected answer.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.3,
-        "numeric_score": 80.0
+        "runtime_seconds": 0.27,
+        "numeric_score": 100.0
     },
     {
         "id": 17,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Registration complete for participant: Nina Patel. Fingerprint ID: FP-789654, Facial recognition code: FR-123ABC.\"",
-        "model_response": "\"Registration complete for participant: [REDACTED]. Fingerprint ID: [REDACTED], Facial recognition code: [REDACTED].\"",
-        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all personal data by replacing each piece of personal information with \"[REDACTED],\" which aligns with the expected redaction of the full name, fingerprint ID, and facial recognition code.",
+        "model_response": "Redacted text: \"Registration complete for participant: [FP-789654]. Fingerprint ID: [FP-789654], Facial recognition code: [FR-123ABC].\"",
+        "score": "Grade: 2\n\nJustification: The model's response incorrectly redacts the full name and fails to use the correct placeholders for the fingerprint ID and facial recognition code, only partially addressing the redaction task.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.31,
-        "numeric_score": 100.0
+        "runtime_seconds": 0.5,
+        "numeric_score": 40.0
     },
     {
         "id": 18,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Student: Liam Turner, University ID: U1234567, Email: liam.turner@university.edu, Date of Birth: 03/10/2000.\"",
-        "model_response": "\"University Student: [ID REDACTED], Email: [REDACTED] , Date of Birth: [REDACTED]\"",
-        "score": "Grade: 2\n\nJustification: The model's response redacts the University ID, email, and date of birth but fails to redact the full name, which is a key piece of personal data.",
+        "model_response": "\"Student: [REDACTED], University ID: [REDACTED], Email: [REDACTED], Date of Birth: [REDACTED]\"",
+        "score": "Grade: 5\n\nJustification: The model's response correctly redacts all pieces of personal data in the text, replacing them with placeholders, which aligns perfectly with the expected answer.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.3,
-        "numeric_score": 40.0
+        "runtime_seconds": 0.35,
+        "numeric_score": 100.0
     },
     {
         "id": 19,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Contact information: Emily Davis, daughter of Robert Davis, can be reached at emily.davis@mail.com.\"",
-        "model_response": "\"Contact Information: [Daughter], father is [Robert Davis]. Can be contacted at [emily.davis@mail.com].\"",
-        "score": "Grade: 2\n\nJustification: The model's response incorrectly redacts \"Emily Davis\" and \"Robert Davis\" while also failing to replace them with appropriate placeholders, and it does not redact the email address correctly, indicating a misunderstanding of the task.",
+        "model_response": "\"Contact information: [DaughterOfRobertDavis], can be reached at [contactinfo].",
+        "score": "Grade: 2\n\nJustification: The model's response redacts the email address but fails to redact both full names, \"Emily Davis\" and \"Robert Davis,\" which are key details of personal data.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.31,
+        "runtime_seconds": 0.25,
         "numeric_score": 40.0
     },
     {
         "id": 20,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Employee: Mark Johnson, formerly employed at Global Corp, salary details confidential, email: mark.johnson@globalcorp.com, phone: 555-6677.\"",
-        "model_response": "\"Mark's former employer was Global Corp. His salary is not publicly disclosed and his email address is [email]mark.johnson@globalcorp.com[/.] His contact number has been replaced with a placeholder, [phone].",
-        "score": "Grade: 2\n\nJustification: The model's response fails to redact the full name and does not correctly replace the email and phone number with appropriate placeholders, making it mostly incorrect.",
+        "model_response": "\"Formerly Employed Employee: [EMPLOYEE], Salary Details Confidential, Email: [REDACTED], Phone: [REDACTED]\"",
+        "score": "Grade: 3\n\nJustification: The model's response correctly redacts the email and phone number but fails to properly redact the full name \"Mark Johnson\" and does not use clear placeholders indicating the type of data removed.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.51,
-        "numeric_score": 40.0
+        "runtime_seconds": 0.35,
+        "numeric_score": 60.0
     },
     {
         "id": 21,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"During a family reunion last summer, Sarah Williams shared her personal experiences and mentioned that she lives at 321 River Road and her contact email is sarahwilliams@familymail.com. Her story also touched on her struggles with digital privacy.\"",
-        "model_response": "\"During a family reunion last summer, [REDACTED] shared her personal experiences and mentioned being located at [REDACTED]. Her narrative also covered the challenges she faced regarding online privacy.\"",
-        "score": "Grade: 3\n\nJustification: The model correctly redacted the full name and address but failed to redact the email address, which is a key piece of personal data.",
+        "model_response": "During a family reunion last summer, [NAME] shared their personal experiences and mentioned living at 321 River Road and having an email address of sarahwilliams@familymail.com . Their story also discussed challenges related to digital privacy.",
+        "score": "Grade: 3\n\nJustification: The model correctly redacted the name but failed to redact the address and email address, which are key pieces of personal data.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.42,
+        "runtime_seconds": 0.55,
         "numeric_score": 60.0
     },
     {
         "id": 22,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Welcome to my blog! I'm Alex Martinez. Visit my website at www.alexmartinezblog.com or drop me a line at alex.martinez@example.net. I occasionally share my contact number, 555-8899, with readers.\"",
-        "model_response": "\"Welcome to my blog! I'm [REDACTED]. Visit my website at www.[REDACTED] or drop me a line at [REDACTED]. I occasionally share some details about myself, but not all of them are personal data. For instance, the contact number is 555-8899 and it has been removed from the text.\"",
-        "score": "Grade: 2\n\nJustification: The model's response redacts the name and email address but fails to redact the website URL and phone number, which are also personal data, and incorrectly claims the phone number is not personal data.",
+        "model_response": "Welcome to my blog! I'm [REDACTED]. Visit my website at www.[REDACTED] or drop me a line at [REDACTED]. I occasionally share my personal data like phone number, [REDACTED], with readers.",
+        "score": "Grade: 3\n\nJustification: The model correctly redacted the full name, email address, and phone number, but failed to redact the website URL and did not use specific placeholders to indicate the type of data removed.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.76,
-        "numeric_score": 40.0
+        "runtime_seconds": 0.54,
+        "numeric_score": 60.0
     },
     {
         "id": 23,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"A user commented: 'My name is Jordan, and I'm from a small town in Kansas.' No further details were provided.\"",
-        "model_response": "\"A user commented: '[NAME], and they are from a small town in Kansas.' No further details were provided.\"",
-        "score": "Grade: 3\n\nJustification: The model correctly redacted the name \"Jordan\" but failed to redact the location detail \"a small town in Kansas,\" which is also considered personal data.",
+        "model_response": "\"A user commented: '[REDACTED], and they are from a small town in Kansas.' No further details were provided.\"",
+        "score": "Grade: 3\n\nJustification: The model correctly redacted the name but failed to redact the location detail, which is also considered personal data.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.27,
+        "runtime_seconds": 0.29,
         "numeric_score": 60.0
     },
     {
         "id": 24,
         "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Notice: Our records show that the account registered under the email lily.brown@service.com with phone number 555-3322 belongs to an individual residing at 789 Sunset Blvd, whose birthdate is 12/08/1992.\"",
-        "model_response": "\"Notice: Our records show that the account registered under the email [email] with phone number 555-3322 belongs to a person residing at [address], whose birthdate is 12/08/19[age].\"",
-        "score": "Grade: 3\n\nJustification: The response correctly redacts the email address and partially redacts the address, but it fails to redact the phone number and incorrectly redacts the date of birth.",
+        "model_response": "\"Notice: Our records show that the account registered under the email [email] with phone number [phone number] belongs to a person residing at [address], whose birthdate was removed or anonymized due to privacy concerns.",
+        "score": "Grade: 3\n\nJustification: The model's response correctly redacts the email, phone number, and address, but it fails to use a consistent placeholder for the birthdate and instead provides a vague statement about privacy concerns, which deviates from the expected format.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.55,
+        "runtime_seconds": 0.48,
         "numeric_score": 60.0
     },
     {
@@ -221,7 +221,7 @@
         "model_response": "\"In a recent interview, tech entrepreneur [REDACTED] discussed his early life. He mentioned growing up in a suburb of Seattle, Washington, and that he graduated from Lakeview High School in 2005. [REDACTED] can be reached via his professional email kevin.adams@startup.com and his work phone 555-7788. His LinkedIn profile also confirms his career and educational timeline.\"",
         "score": "Grade: 3\n\nJustification: The model correctly redacted the full name but failed to redact other personal data such as the location detail, educational history, email address, and phone number.",
         "model_used": "nemotron-mini:latest",
-        "runtime_seconds": 0.9,
+        "runtime_seconds": 0.91,
         "numeric_score": 60.0
     }
 ]

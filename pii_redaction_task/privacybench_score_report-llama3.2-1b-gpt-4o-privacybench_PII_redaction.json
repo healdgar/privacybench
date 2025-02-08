@@ -1,6 +1,6 @@
 {
     "llama3.2:1b": {
-        "overall_score": 2.4,
+        "overall_score": 0.8,
         "question_breakdown": {
             "1": {
                 "score": 0.0,
@@ -79,7 +79,7 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Contact information: Emily Davis, daughter of Robert Davis, can be reached at emily.davis@mail.com.\""
             },
             "20": {
-                "score": 20.0,
+                "score": 0.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Employee: Mark Johnson, formerly employed at Global Corp, salary details confidential, email: mark.johnson@globalcorp.com, phone: 555-6677.\""
             },
             "21": {
@@ -91,7 +91,7 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Welcome to my blog! I'm Alex Martinez. Visit my website at www.alexmartinezblog.com or drop me a line at alex.martinez@example.net. I occasionally share my contact number, 555-8899, with readers.\""
             },
             "23": {
-                "score": 20.0,
+                "score": 0.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"A user commented: 'My name is Jordan, and I'm from a small town in Kansas.' No further details were provided.\""
             },
             "24": {

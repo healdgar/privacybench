@@ -1,13 +1,11 @@
-# LegalBench(tm) and PrivacyBench(tm)
+# PrivacyBench
 
-This repository dedicated to benchmarking legal and privacy-related performance of generative AI models and uses.
+This repository is dedicated to benchmarking legal and privacy-related performance of generative AI models and is used to enable appropriate and effective use of AI to assist with legal and compliance matters.
 
-**Problem to be Solved**
+**Purpose of PrivacyBench**
 
-- Existing industry benchmarks are not specifically tuned to legal and privacy work.  While benchmarks such as the ![MMLU](https://en.wikipedia.org/wiki/MMLU) provide strong indications of linguistic understanding, benchmarks need to be developed to measure to legal and compliance tasks, which require the combination of logical and linguistic thinking amid exceptionally large context, with a very low tolerance for error and creativity.
-- The industry lacks benchmarks on legal, privacy, and compliance tasks (both knowledge-based and practical) to enable better regulatory compliance to protect both businesses and the public and contribute to AI governance.
-- The proliferation of open source models and variants leads to errors in choice and delays in deployment.
-- People with fewer economic and educational resources are underrepresented in the legal system as a result of lack of access to reliable, low-cost services.
+- Existing industry benchmarks, such as the ![MMLU](https://en.wikipedia.org/wiki/MMLU), provide strong indications of linguistic understanding but are not specifically tuned to measure legal, privacy, and compliance tasks.
+- Existing benchmarks are not adequately specific to legal, privacy and compliance tasks.
 
 **Proposed Solution**
 
@@ -16,15 +14,14 @@ This repository dedicated to benchmarking legal and privacy-related performance 
 - Identify, in particular, LLM models that can be deployed locally and efficiently for maximum privacy and security and lowest cost.
 - Encourage the community development of better tools through benchmarking.
 
-**About the author**
-
-- Alex Wall is legal counsel for businesses with more than 17 years experience practicing the law, particularly specialized in Privacy and AI Governance.
-
 **Call for contributions**
 
-- Alex Wall has open-sourced this repository under MIT license and is open to contributions by legal and engineering minds who wish to contribute to devising and bengineering the benchmarking of additional legal tasks.
+- This repository is open-sourced under MIT license and the code and testing process is free to use with appropriate credit attribution (subject to third-party licenses).
 
 **Specific Tasks**
 
-- The first use case selected to be benchmarked and tested is personal data detection and redaction.  Please see this task in this repo for additional details.
+- The first use case selected to be benchmarked and tested is personal data detection and redaction; please see this task in this repo for additional details.
 
+**Trademark**
+
+- PrivacyBench is a trademark of Alex J. Wall.

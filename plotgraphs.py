@@ -66,7 +66,7 @@ colors = ['red' if 'gpt-4o' in m.lower() else 'skyblue' for m in sorted_models]
 bars = plt.bar(sorted_models, sorted_scores, color=colors)
 plt.xlabel("Model")
 plt.ylabel("Overall Score (0-100)")
-plt.title("Overall Model Scores (Ordered by Score, 0-100 Scale)")
+plt.title("Model Scores on Simple Redaction Tasks (Ordered by Score, 0-100 Scale)")
 plt.ylim(0, 100)
 plt.xticks(rotation=45)
 

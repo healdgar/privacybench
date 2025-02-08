@@ -45,12 +45,11 @@ def load_score_report(filepath):
 # ---------------------------
 USE_ONLINE_API = False  # Set to True to test online APIs (e.g., gpt-4o)
 
-QUESTION_SOURCE_FILE = "privacybench_PII_redaction.json"
+QUESTION_SOURCE_FILE = "evaluation_questions/privacybench_PII_redaction.json"
 QUESTION_SOURCE_BASENAME = os.path.splitext(os.path.basename(QUESTION_SOURCE_FILE))[0]
 
 # Define a list of tested models (you can add more here)
 TESTED_MODELS = [
-    "vanilj/gemma-2-ataraxy-9b:IQ2_M",
     "mistral:latest",
     "nemotron-mini:latest",
     "gemma2:9b",

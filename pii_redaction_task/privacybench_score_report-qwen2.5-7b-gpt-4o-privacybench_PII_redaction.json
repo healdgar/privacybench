@@ -7,7 +7,7 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]). \n\nText: \"For inquiries, please email us at info@example.com.\""
             },
             "2": {
-                "score": 80.0,
+                "score": 100.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"If you have any questions, call 555-6789.\""
             },
             "3": {
@@ -31,7 +31,7 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Had a great day at Central Park! - Posted by Marcus Lee, email: marcus.lee@social.com, call me at 555-1122.\""
             },
             "8": {
-                "score": 80.0,
+                "score": 100.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Customer account number 123456789 is associated with Sarah Connor, whose email is sarah.connor@cyberdyne.com.\""
             },
             "9": {
@@ -55,11 +55,11 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Patient: Carlos Ramirez, DOB: 02/15/1978, Medical ID: 456789, Address: 987 Willow Lane, Contact: carlos.ramirez@healthmail.com.\""
             },
             "14": {
-                "score": 80.0,
+                "score": 100.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"DL# D12345678, issued to Kevin Nguyen, born 11/05/1982, residing at 654 Maple Ave.\""
             },
             "15": {
-                "score": 80.0,
+                "score": 60.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"On 04/12/2023, Maria Garcia checked in at 250 Park Lane, New York, NY 10022. Contact: maria.garcia@domain.com, Phone: 555-2233.\""
             },
             "16": {
@@ -87,11 +87,11 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"During a family reunion last summer, Sarah Williams shared her personal experiences and mentioned that she lives at 321 River Road and her contact email is sarahwilliams@familymail.com. Her story also touched on her struggles with digital privacy.\""
             },
             "22": {
-                "score": 100.0,
+                "score": 40.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Welcome to my blog! I'm Alex Martinez. Visit my website at www.alexmartinezblog.com or drop me a line at alex.martinez@example.net. I occasionally share my contact number, 555-8899, with readers.\""
             },
             "23": {
-                "score": 40.0,
+                "score": 60.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"A user commented: 'My name is Jordan, and I'm from a small town in Kansas.' No further details were provided.\""
             },
             "24": {

@@ -1,9 +1,9 @@
 {
     "gemma2:9b": {
-        "overall_score": 94.4,
+        "overall_score": 92.8,
         "question_breakdown": {
             "1": {
-                "score": 60.0,
+                "score": 40.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]). \n\nText: \"For inquiries, please email us at info@example.com.\""
             },
             "2": {
@@ -59,7 +59,7 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"DL# D12345678, issued to Kevin Nguyen, born 11/05/1982, residing at 654 Maple Ave.\""
             },
             "15": {
-                "score": 60.0,
+                "score": 80.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"On 04/12/2023, Maria Garcia checked in at 250 Park Lane, New York, NY 10022. Contact: maria.garcia@domain.com, Phone: 555-2233.\""
             },
             "16": {
@@ -79,7 +79,7 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Contact information: Emily Davis, daughter of Robert Davis, can be reached at emily.davis@mail.com.\""
             },
             "20": {
-                "score": 100.0,
+                "score": 80.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Employee: Mark Johnson, formerly employed at Global Corp, salary details confidential, email: mark.johnson@globalcorp.com, phone: 555-6677.\""
             },
             "21": {
@@ -87,7 +87,7 @@
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"During a family reunion last summer, Sarah Williams shared her personal experiences and mentioned that she lives at 321 River Road and her contact email is sarahwilliams@familymail.com. Her story also touched on her struggles with digital privacy.\""
             },
             "22": {
-                "score": 100.0,
+                "score": 80.0,
                 "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Welcome to my blog! I'm Alex Martinez. Visit my website at www.alexmartinezblog.com or drop me a line at alex.martinez@example.net. I occasionally share my contact number, 555-8899, with readers.\""
             },
             "23": {

@@ -2,7 +2,7 @@ import json
 from openai import OpenAI
 
 # Instantiate the client with your API key
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="<your key here>")
 
 # Define the external grading model
 EXTERNAL_GRADING_MODEL = "gpt-4o"  # Replace with your API model

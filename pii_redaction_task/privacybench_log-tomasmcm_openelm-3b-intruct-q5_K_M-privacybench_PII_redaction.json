@@ -1,0 +1,227 @@
+[
+    {
+        "id": 1,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]). \n\nText: \"For inquiries, please email us at info@example.com.\"",
+        "model_response": "[deleted] inquires@example.com\n\n<3 name(s): [NAME]\n\n<|",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 1.26,
+        "correct_answer": "There is no PII, because there is only email address not associated with an individual.",
+        "type": "redaction"
+    },
+    {
+        "id": 2,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"If you have any questions, call 555-6789.\"",
+        "model_response": "[FAKE NAME]\n<info>[NAME]</info>\n<execute srcsub builtin/mark.sh redact?></execute>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.29,
+        "correct_answer": "555-6789 (Phone number)",
+        "type": "redaction"
+    },
+    {
+        "id": 3,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"For further details, contact John Smith.\"",
+        "model_response": "[NAME]\n<|",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.09,
+        "correct_answer": "John Smith (Full Name)",
+        "type": "redaction"
+    },
+    {
+        "id": 4,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Reach out to Jane Doe at 1234 Elm Street for more information.\"",
+        "model_response": "[FAKENAME]\n<info>[NAME] has been reached out to for more information via private message.</info>\n\n<doctitle>Personal data removed.</doctitle>\n\n<request id=\"immediate\">\nSend this redaction to [EMAIL] and [URL]\n</request>\n\n<response id=\"immediate\">\nContinued redacted message text excerpt follows:\n\nText: \"Reach out to Jane Doe at 1234 Elm Street for more information.\"\n\nAnswer:\n\n[FAKENAME] has been reached out to for more information via direct private message to your TeXtfy credentials (i.e. email and username).<info>[EMAIL]</info> and a link to the redaction will be sent to you shortly.<info>[URL]</info>\n\nRemember to replace `$EXAMPLE_TEXT` with your actual exam text content.\n</response>\n\n<before>(end replies)</before>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 1.76,
+        "correct_answer": "Jane Doe (Full Name); 1234 Elm Street (Address).",
+        "type": "redaction"
+    },
+    {
+        "id": 5,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Michael Johnson, born on 07/12/1985, resides at 789 Oak Avenue, and his email is mike.johnson@example.com.\"",
+        "model_response": "```python\ndef redaction(token):\n    return \"[\" + str(len(token.elidables)) + \"/'ANONYMIZED']\" + (\"[PERSONAL]\" if len(token.elidables) < 6 else \" [ANONIDREFERENCED]\"camelcase(str(len(token.elidables)))) + \": \" + (\"name: \" * len(token.elidables)) + token.elidables[len(token.elidables)-1].value + \"\\n\"\n\ndef exam_passage(passage):\n    return \"human: [ANONIDREFERENCED]\" + redaction(passage)[:-2] + \"\\n\"\n\ndef exam(input_lines):\n    exam_str = \"personal_data_found_continued_below\\n\"\n    for line_num, line in enumerate(input_lines, 1):\n        exam_str += exam_passage(line) + \"\\n\"\n        if line_num < (len(input_lines) - 5):\n            exam_str += \"human_continued\\n\"\n        else:\n            exam_str += \"human_done\\n\"\n    return exam_str[:-3]\n\nprint(exam(load_tweet_examples(\"src/text_pipeline/demo/human_data_found.txt\")))\n```",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 2.58,
+        "correct_answer": "Michael Johnson (Full Name); 07/12/1985 (Date of Birth); 789 Oak Avenue (Address); mike.johnson@example.com (Email address)",
+        "type": "redaction"
+    },
+    {
+        "id": 6,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Candidate: Lisa Wong; Contact: lisa.wong@example.org; Phone: (555) 987-6543; Address: 456 Pine Street, Apt 3.\"",
+        "model_response": "```python\ndef redaction_personal_data(source, pattern, replacement):\npep_source = inspect.getfile(source.__module__)\npep_pattern = inspect.getsourcefile(pattern)\n\ndef redaction_personal_data_helper(content):\n    lines = content.strip().split(\"\\n\")\n    for line in lines[4:]:\n        m = re.search(pattern, line, flags=re.MULTILINE)\n        if m:\n            line = line[:m.start()] + replacement + line[m.end():]\n            yield line\n\n    return \"\\n\".join(dedent(f\"> {m.group()}<sep>\\n{line}\\n<sep>\")\n                .strip().split(\"\\n\")[:-1])\n\nsource_code = redaction_script(pep_source, pep_pattern).strip()\nsource_code = redaction_personal_data_helper(source_code)\n\nwith open(\"./input/example.txt\", \"w\") as file:\n    print(source_code, file=file)\n```\n\n<1=blue> Gray cells are placeholders",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 2.14,
+        "correct_answer": "Lisa Wong (Full Name); lisa.wong@example.org (Email address); (555) 987-6543 (Phone number); 456 Pine Street, Apt 3 (Address)",
+        "type": "redaction"
+    },
+    {
+        "id": 7,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Had a great day at Central Park! - Posted by Marcus Lee, email: marcus.lee@social.com, call me at 555-1122.\"",
+        "model_response": "```python\ndef redaction(source, pattern=[\\w.]+(?:[^\\s\\.',;:@&~])*Iterator$)):\n'>[NAME]'\nreturn source[:pattern.findResult(regex=compile(pattern, \"<input>\", locale=\"en_US\", flags=<|utils.dedent|>))]\n```\n<|shell|>\nrewitext.py redaction(",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.75,
+        "correct_answer": "Marcus Lee (Full Name); marcus.lee@social.com (Email address); 555-1122 (Phone number)",
+        "type": "redaction"
+    },
+    {
+        "id": 8,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Customer account number 123456789 is associated with Sarah Connor, whose email is sarah.connor@cyberdyne.com.\"",
+        "model_response": "```python\ndef redaction(source, pattern=[\\w]+userId:'[\\d]+userId='([\\d]+)') => cleaned:\n    return ''.join(filter(pattern.fullmatch, map(lambda m:source[m.start():m.end()+2], source.splitlines())))\n\ntext = redaction(open(\"e:/Users/your_name/personal_python_projects/03_advanced_regex_lecture_examples/task_01/eg_personal_data_example.txt\").read())\nassert re.search(r'\\w+userId:\\s*\"([^\"]+)\")', text, re.MULTILINE).groups() == ['Sarah Connor', '123456789']\n```\n\n<style>\nlimerent .yih-container textarea::-webkit-scrollbar {\n    display: none;\n}\n</style>\n<script src=\"../../styles/yih-preview.umd.js\"></script>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 1.84,
+        "correct_answer": "123456789 (Account number); Sarah Connor (Full Name); sarah.connor@cyberdyne.com (Email address)",
+        "type": "redaction"
+    },
+    {
+        "id": 9,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Employee record: Name: David Brown, SSN: 987-65-4321.\"",
+        "model_response": "```python\ndef exam_personal_data(source_str, redaction_dict={}):\nacheck = exam_helper.ExamineStringAnswerChecker(trim_answer=True, indent=True)    \n    exam_result = exam_helper.exam(source_str.strip(), trim_answer=True, force_regex=True)(acheck)\n    return exam_result\n\nanswer = exam_personal_data(explanation=True)\nassert answer.accepted_answer == \"NAME\"\n\nexplanation = answer.explanation_template.replace(\"<TRIM_ANSWER>\", str(True)).replace(\"<EXPLANATION>\", str(answer.content_encoded_text))\nassert explanation == clean_up_personal_data(explanation)\n\nassert redact.searchstrings_in(explanation).count(\"[NAME]\") == 0\n```\n\n<p>&nbsp;</p>\n\n<p>Title: Examine the following text excerpt and redaction placeholder markup. Replace all occurrences of personal data (e.g. SSN) with the respective placeholder and re-run the examination.</p>\n\n<p>Your exam solution should:</p>\n\n<ol type=\"1\">\n  <li>Replace all occurrences of personal data (e.g. <kbd>SSN</kbd>) with their respective placeholder <kbd>[SSN]</kbd>.</li>\n  <li>Remove whitespace between markup elements.</li>\n</ol>\n\n<p>Explanation:</p>\n\n<p style=\"text-align: center;\"><kbd>[SSN]</kbd> placeholder indicates the SSN has been removed.</p>\n\n<p style=\"font-size: 1.5rem; color: #5A5F70; text-align: center;\">David Brown's social security number.</p>\n\n<p>Text:</p>\n\n<p style=\"font-size: 0.95rem; color: #5A5F70; text-align: left;\">\n  <kbd>\"Employee record:</kbd>\n  <kbd>\"Name:</kbd> David Brown<kbd>,</kbd>\n  <kbd>\"Social Security Number:</kbd> 987-65-4321.</kbd>\n</p>\n\n<p style=\"margin-bottom: 2rem;\">Answer:</p>\n\n<p style=\"margin-bottom: 2rem;\">\n  <kbd><TRIM_ANSWER></kbd>\n  \n  <kbd><EXPLANATION></kbd>\n  \n  <kbd><EXPLANATION_TEMPLATE></kbd>\n  \n  <kbd><answer_encoded></kbd>\n</p>\n\n<p style=\"margin-bottom: 2rem;\">Solution:</p>\n\n<p style=\"margin-bottom: 2rem;\">\n  <kbd><START_EXAMPLE_CODE></kbd>\n  \n  <kbd data-hem-remove=\"#accepted_answer,#content_encoded_text\">def exam_personal_data(source_str, redaction_dict={}):</kbd>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 5.79,
+        "correct_answer": "David Brown (Full Name); 987-65-4321 (Social Security Number)",
+        "type": "redaction"
+    },
+    {
+        "id": 10,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Passport Number: X1234567 belonging to Emma Wilson is required for verification.\"",
+        "model_response": "```python\nfrom phantom_redact import PhantomRedaction\nfrom typing_extensions import Final\nimport reaertextile.textile_processing as textileprocessing\n\npdb_regex = Final(\"^[a-zA-Z_]+_pdb$\")\npersonal_data_regex = Final(\"(.*?)\\\\[NAME(.*?)]\\\\])\")\n\n\ndef redaction(source_str: str) -> str:\n    redaction_obj = PhantomRedaction()\n    processed_source_str = redaction_obj.process(textileprocessing.strip_decorators(source_str).strip(), strip_newlines=False)\n    return processed_source_str.format(personal_data_regex.pattern.search(processing_target=processed_source_str).groups()[-1])\n\n\ndef main():\n    excerpt = textileprocessing.strip_decorators(\n        r\"^",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 1.66,
+        "correct_answer": "X1234567 (Passport Number); Emma Wilson (Full Name)",
+        "type": "redaction"
+    },
+    {
+        "id": 11,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Meeting attendees: Robert King (robert.king@example.com, 555-3344) and Susan Miller (susan.miller@example.com, 555-7788).\"",
+        "model_response": "[NAME]\n<lst style=\"justify-around\"><var>susan</var> Miller's <em style=\"text-decoration: underline\">personal data</em>: [redacted]\n</lst>\n<subrev>\nTo demonstrate the placeholder formatting, the placeholder text is shown in bold.\n</subrev>\n\n<subrev>\nTo view the full placeholder formatting details, see the <x refproblem=\"fmt:lststyle+justify-around\"/> Markdown style.\n</subrev>\n\n<subrev>\nTo view the full placeholder explanation, see the <<fmtsh|fmtsh>> utility.\n</subrev>\n\n<subrev>\nTo toggle placeholder formatting on or off, press `cmd-shift-P` (on macOS) or `ctrl-shift-P` (on Windows and Linux).\n</subrev>\n\n<|enduser|>\n\u00b9. [fmtsh|fmtsh]\n\n\u00b2. **fmt:lststyle+justify-around**\n\n   Set text in an `<li>` element to justify on both left and right floats.\n\n   Format: `${text}${fmtvarfmtstylename}${fmtbarstylename}${fmtnlstylename}${/text}+`\n\n   Markdown link: https://daringfireball.net/projects/markdown/syntax#justified-elements\n\n   Utility JavaScript function: https://github.com/facconi/pandoc-plugin-fmt/blob/master/src/fmt.js#L1082\n\n   Example:\n\n   ```markdown\n   Here's some text:\n\n   +--------+---------+---------+---------+---------+\n   | Text   | Justified| Left-Justified| Right-Justified|\n   +========+==========+==============+==============+\n   | left   |  \u2714\ufe0f     |    \u2714\ufe0f       |    \u2714\ufe0f       |\n   +--------+---------+---------+---------+---------+\n\n   Here's some more text:\n\n   +--------+---------+---------+---------+---------+\n   | Text   | Left-Justified| Right-Justified| Justified|\n   +========+==============+==============+==============+\n   | right  |    \u2714\ufe0f       |    \u2714\ufe0f       |  \u2714\ufe0f        |\n   +--------+---------+---------+---------+---------+\n   ```\n\n   Note: The `${fmtvarfmtstylename}` placeholder syntax is optional.",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 4.31,
+        "correct_answer": "Robert King (Full Name), robert.king@example.com (Email address), 555-3344 (Phone number); Susan Miller (Full Name), susan.miller@example.com (Email address), 555-7788 (Phone number)",
+        "type": "redaction"
+    },
+    {
+        "id": 12,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Applicant: Amanda Clark, Address: 321 Birch Road, Date of Birth: 09/23/1990, Email: amanda.clark@jobs.com, Phone: 555-4455.\"",
+        "model_response": "[NAME]\n<lst style=\"justify-around\"><var>TEXT</var></lst>\n<replacehighlight kind=\"text\"><em>ANSWER:</em></replacehighlight>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.36,
+        "correct_answer": "Amanda Clark (Full Name); 321 Birch Road (Address); 09/23/1990 (Date of Birth); amanda.clark@jobs.com (Email address); 555-4455 (Phone number)",
+        "type": "redaction"
+    },
+    {
+        "id": 13,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Patient: Carlos Ramirez, DOB: 02/15/1978, Medical ID: 456789, Address: 987 Willow Lane, Contact: carlos.ramirez@healthmail.com.\"",
+        "model_response": "[NAME]\n<info>[PERSONAL_DATA_REDACTED]\n</info>\n\n<|",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.24,
+        "correct_answer": "Carlos Ramirez (Full Name); 02/15/1978 (Date of Birth); 456789 (Medical ID); 987 Willow Lane (Address); carlos.ramirez@healthmail.com (Email address)",
+        "type": "redaction"
+    },
+    {
+        "id": 14,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"DL# D12345678, issued to Kevin Nguyen, born 11/05/1982, residing at 654 Maple Ave.\"",
+        "model_response": "[NAME]\n<lst style=\"justify-around\"><option value=\"identity-card\">IDENTITY_CARD</option>\n<gi>DL#</gi>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.35,
+        "correct_answer": "D12345678 (Driver's License Number); Kevin Nguyen (Full Name); 11/05/1982 (Date of Birth); 654 Maple Ave (Address)",
+        "type": "redaction"
+    },
+    {
+        "id": 15,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"On 04/12/2023, Maria Garcia checked in at 250 Park Lane, New York, NY 10022. Contact: maria.garcia@domain.com, Phone: 555-2233.\"",
+        "model_response": "Title: Examining Personal Data in Redaction Log Entries\n<singleQuote>[NAME]</singleQuote>\n\n<success>Examining Personal Data: Garcia</success>\n\n<success>Checked In: 2023-12-04</success>\n\n<info>Date: April 12, 2023</info>\n\n<success>Redacted Entries:</success>\n<table border=\"1\">\n<thead>\n<tr>\n<th>Type</th>\n<th>Description</th>\n</tr>\n</thead>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 1.08,
+        "correct_answer": "Maria Garcia (Full Name); 04/12/2023 (Date); 250 Park Lane, New York, NY 10022 (Address); maria.garcia@domain.com (Email address); 555-2233 (Phone number)",
+        "type": "redaction"
+    },
+    {
+        "id": 16,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"User logged in from IP address 192.168.1.101. Account holder: Jason Lee, email: jason.lee@techsupport.com.\"",
+        "model_response": "[NAME]\n<lst style=\"justify-around\"><option value=\"IP address\">IP address</option>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.23,
+        "correct_answer": "192.168.1.101 (IP address); Jason Lee (Full Name); jason.lee@techsupport.com (Email address)",
+        "type": "redaction"
+    },
+    {
+        "id": 17,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Registration complete for participant: Nina Patel. Fingerprint ID: FP-789654, Facial recognition code: FR-123ABC.\"",
+        "model_response": "```python\ndef redaction(source, tokens):\n        placeholder = ['[NAME]']\n        reg_text = ''.join([placeholder[idx] for idx in range(len(tokens))])\n        return reg_text + source.replace(tokens, reg_text + tokens)\n\nreg_text = redaction(text, data_tokens)\nprint(",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.68,
+        "correct_answer": "Nina Patel (Full Name); FP-789654 (Fingerprint ID); FR-123ABC (Facial recognition code)",
+        "type": "redaction"
+    },
+    {
+        "id": 18,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Student: Liam Turner, University ID: U1234567, Email: liam.turner@university.edu, Date of Birth: 03/10/2000.\"",
+        "model_response": "[student_name]\n<sep lines=\"4\"/>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.14,
+        "correct_answer": "Liam Turner (Full Name); U1234567 (University ID); liam.turner@university.edu (Email address); 03/10/2000 (Date of Birth)",
+        "type": "redaction"
+    },
+    {
+        "id": 19,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Contact information: Emily Davis, daughter of Robert Davis, can be reached at emily.davis@mail.com.\"",
+        "model_response": "[NAME]\n<info>[NAME]:emily.davis@mail.com\n\n<|",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.21,
+        "correct_answer": "Emily Davis (Full Name); Robert Davis (Family relationship, if applicable); emily.davis@mail.com (Email address)",
+        "type": "redaction"
+    },
+    {
+        "id": 20,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Employee: Mark Johnson, formerly employed at Global Corp, salary details confidential, email: mark.johnson@globalcorp.com, phone: 555-6677.\"",
+        "model_response": "[NAME]\n<lst style=\"justify-around\"><var>salary details</var> confidential\n<gui src=\"edit_person_data.js\"/><option value=\"TYPE_NULL:TEXT:SALARY_DETAILS_CONFIDENTIAL\" selected=\"selected\"/></lst>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.59,
+        "correct_answer": "Mark Johnson (Full Name); mark.johnson@globalcorp.com (Email address); 555-6677 (Phone number)",
+        "type": "redaction"
+    },
+    {
+        "id": 21,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"During a family reunion last summer, Sarah Williams shared her personal experiences and mentioned that she lives at 321 River Road and her contact email is sarahwilliams@familymail.com. Her story also touched on her struggles with digital privacy.\"",
+        "model_response": "[NAME]'s contact details:\n\n<sub style=\"color:#FFD700; text-decoration: underline;\">sarahwilliams@private.familymail.com</sub>\n\n<sub style=\"color:#ccc; background-color:#FFD700; border:solid windowtext .1em; padding:.25em .6em; white-space:pre;\">PRIVATE</sub>\n\nNo personal data about [NAME] has been removed.\n\n<sub style=\"color:#ccc\">digital privacy</sub>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 1.01,
+        "correct_answer": "Sarah Williams (Full Name); 321 River Road (Address); sarahwilliams@familymail.com (Email address)",
+        "type": "redaction"
+    },
+    {
+        "id": 22,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Welcome to my blog! I'm Alex Martinez. Visit my website at www.alexmartinezblog.com or drop me a line at alex.martinez@example.net. I occasionally share my contact number, 555-8899, with readers.\"",
+        "model_response": "Title: Welcoming Personal Data Demystified Assistant\n<info>[NAME]'s Personal Data Demystified\n<console>`grep -vE '^o'_ 'input.txt|awk '{print \"[$'/{sub(/_[@]+/,\"_\",\"g\")]int replacedField = \"Identifier\"; for (i=2;i<=NF;i++) substr(input,\"substr($i,1,Nfieldlength\"),1,NcharacterToReplace)=sub(/(.{NcharacterToReplace}).*/, \"replacedField = \\\"$replacedField:$1\\\";\", i), input); print repaddedField}'`__",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 1.09,
+        "correct_answer": "Alex Martinez (Full Name); www.alexmartinezblog.com (Website URL); alex.martinez@example.net (Email address); 555-8899 (Phone number)",
+        "type": "redaction"
+    },
+    {
+        "id": 23,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"A user commented: 'My name is Jordan, and I'm from a small town in Kansas.' No further details were provided.\"",
+        "model_response": "Title: Examining Personal Data in Redaction Sentences\n\nSource: RedactInASentence\n\nTitle Page: https://github.com/redsolar/RedactInASentence/blob/master/TitlePage.pdf\n\nAbstract: RedactInASentence is a Python library that allows you to easily extract, replace, Przypisuj text pusteowych (p.ex. `sensitive`, *personal data*) z danymi wej\u015bciowymi w pismach. Dzia\u0142a na potrzeby redacji tekst\u00f3w, np. dokument\u00f3w elektronicznych, dokument\u00f3w osobistych lub komunikat\u00f3w sieciowych.\n\n<vector neue>\n\n\u00a9 Micha\u0142 Redman, [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/) / Redistribution permitted under CC BY 4.0\n\n---\n\n![GitHub contributors](https://img.shields.io/github/contributors/redsolar/RedactInASentence.svg?style=social)\n\n<a href=\"https://twitter.com/intent/follow?screen_name=RedactInASentence\">\n<img src=\"https://img.shields.io/twitter/follow/RedactInASentence.svg?label=Follow&style=social\" alt=\"Follow @RedactInASentence on Twitter\"/>\n</a>\n\n<br/>\n\n<sub>\u0141ukasz Dadzis, <a href=\"https://dadysz.com/\">dadysz.com</a> / <a href=\"https://twitter.com/dadysz_\">@dadysz_</a> / <a href=\"https://github.com/dadysz\">dadysz.github.io</a></sub>\n\n<br/>\n\n<sub>Micha\u0142 Redman, <a href=\"https://github.com/redsolar\">GitHub</a> / <a href=\"https://twitter.com/redsolar\">@redsolar</a></sub>\n\n<br/>\n\n<sub>Piotr Dr\u0105g, <a href=\"https://drega.pl/\">drega.pl</a> / <a href=\"https://twitter.com/drega_it\">@drega_it</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz Dr\u0105g, <a href=\"https://drega.pl/\">drega.pl</a> / <a href=\"https://twitter.com/drega_it\">@drega_it</a></sub>\n\n<br/>\n\n<sub>Piotr \u015ali\u017cek, <a href=\"https://github.com/pslizek\">GitHub</a> / <a href=\"https://twitter.com/pslizek_it\">@pslizek_it</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u015ali\u017cek, <a href=\"https://github.com/lukasz-slizek\">GitHub</a> / <a href=\"https://twitter.com/lukasz_slizek\">@lukasz_slizek</a></sub>\n\n<br/>\n\n<sub>Piotr \u017by\u017cka, <a href=\"https://github.com/p-zyzka\">GitHub</a> / <a href=\"https://twitter.com/p-zyzka\">@p-zyzka</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017by\u017cka, <a href=\"https://github.com/lukasz-zyzka\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zyzka\">@lukasz_zyzka</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>\n\n<sub>\u0141ukasz \u017burada, <a href=\"https://github.com/lukasz-zurada\">GitHub</a> / <a href=\"https://twitter.com/lukasz_zurada\">@lukasz_zurada</a></sub>\n\n<br/>",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 15.03,
+        "correct_answer": "Jordan (First Name, possibly PII); Small town in Kansas (Location detail)",
+        "type": "redaction"
+    },
+    {
+        "id": 24,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"Notice: Our records show that the account registered under the email lily.brown@service.com with phone number 555-3322 belongs to an individual residing at 789 Sunset Blvd, whose birthdate is 12/08/1992.\"",
+        "model_response": "```python\nimport re\nimport phantom.phd as phd\nfrom phantom.aio.aio import PhantomQSANetConnection\nfrom phantom.app import App, PhantomFinder\nfrom phantom.flowbased import FlowBasedTestExecutor\nfrom phantom.originentries import Entry\n\n\ndef redaction(app: App, finder: PhantomFinder, entry: Entry) -> str:\n    email_regex = r\"[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\\\.[a-z]+\"\n    username_regex = r\"[A-Za-z]+(_com)?\\\\w*\"\n    name_regex = r\"(?:[^[:punct:][.!,()]*+}{|,&,;:]*)*\" +\\\n                r\"(?:[^[:punct:][.!,()]*+\u00b7]+)|\" +\\\n                r\"\\[[^[:punct:]][.!,()]*+\"]+\"\n    dob_regex = r\"(\\d{1,2})\\/(\\d{1,2})\\/(\\d{4})\"\n    dob_fmt = f\"{dob_regex:%d/%m/%Y}\"\n\n    email_replacement = \"[NAME]: [EMAIL REMOVED]\"\n    username_replacement = \"[NAME]_$username_replacement\"\n    name_replacement = \"[NAME]_$name_replacement\"\n    dob_replacement = f\"[NAME]_$dob_replacement ($dob_fmt)\"\n\n    username_finder = re.compile(username_regex)\n    email_finder = re.compile(email_regex)\n    dob_finder = re.compile(dob_regex)\n\n    username_finder.sub(username_replacement, username_finder.sub(\"\", entry.find_text(\"Username\")))\n    email_finder.sub(email_replacement, email_finder.sub(\"\", entry.find_text(\"Email Address\")))\n    dob_finder.sub(dob_replacement, dob_finder.sub(\"\", entry.find_text(\"Date of Birth\")))\n\n    return redaction_regex(finder, email_finder, username_finder, dob_finder).replace(r\"\\1\", entry.find_text(\"Phone Number\"))\n\n\ndef redaction_regex(finder: PhantomFinder, email_finder: re.Pattern, username_finder: re.Pattern, dob_finder: re.Pattern) -> str:\n    placeholder_replacements = {\n        Entry.EMAIL: email_replacement,\n        Entry.USERNAME: username_replacement,\n        Entry.DATE_OF_BIRTH: dob_replacement,\n    }\n\n    def redaction_regex(entry: Entry) -> str:\n        replacements = placeholder_replacements.copy()\n        for key, value in replacements.items():\n            regex = value.pattern\n            replacement = f\"[{key}: {value.replace_all(\"\\\\d\", \"\\\\d{3}\")}]\"\n            entry_regex = regex.replace(r\"\\1\", replacement)\n            regex = re.compile(entry_regex)\n            entry.find_all(regex).extend(regex.findall(entry.find_all(regex)))\n        return entry.replace_all(regex, \"\")\n\n    return redaction_regex(finder).replace(r\"\\1\", finder.find_all(finder.regex(\"Phone Number\")))\n\n\ndef main():\n    app = App()\n    qsanet_connection = PhantomQSANetConnection.from_env_variables()\n    qsanet_connection.start()\n\n    executor = FlowBasedTestExecutor(app, qsanet_connection)\n    executor.run(PhantomFinder([Entry.EMAIL, Entry.USERNAME, Entry.DATE_OF_BIRTH]))\n\n    qsanet_connection.stop()\n\n    print(executor.get_results_as_strings())\n\n    app.report_findings(executor.get_findings_as_strings())\n\n    executor.upload_results(phantom_dir=app.phantom_dir)\n\n    main()\n\n\nif __name__ == \"__main__\":\n    import aiodocker\n\n    docker = aiodocker.DockerContainer(\"phantomjs/server\")\n    docker.start()\n\n    executor = FlowBasedTestExecutor(app, docker)\n    executor.run(PhantomFinder([Entry.EMAIL, Entry.USERNAME, Entry.DATE_OF_BIRTH]))\n\n    docker.stop()\n\n    print(executor.get_results_as_strings())\n\n    app.report_findings(executor.get_findings_as_strings())\n\n    executor.upload_results(phantom_dir=app.phantom_dir)\n\n    main()\n\n\nmain()\n```",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 9.01,
+        "correct_answer": "lily.brown@service.com (Email address); 555-3322 (Phone number); 789 Sunset Blvd (Address); 12/08/1992 (Date of Birth)",
+        "type": "redaction"
+    },
+    {
+        "id": 25,
+        "question": "Examine the following text excerpt and redact all information that you would associate with an identified or identifiable individual human and therefor qualifies as personal data. For redaction, replace each piece of personal data with a placeholder that indicates the type of data has been removed (e.g. [NAME]).\n\nText: \"In a recent interview, tech entrepreneur Kevin Adams discussed his early life. He mentioned growing up in a suburb of Seattle, Washington, and that he graduated from Lakeview High School in 2005. Kevin can be reached via his professional email kevin.adams@startup.com and his work phone 555-7788. His LinkedIn profile also confirms his career and educational timeline.\"",
+        "model_response": "Title: Examining Personal Data In Situations Requiring Redaction\n\n<AC>In a recent interview, Kevin Adams\n<EOR>discussed his early life.",
+        "model_used": "tomasmcm/openelm:3b-intruct-q5_K_M",
+        "runtime_seconds": 0.35,
+        "correct_answer": "Kevin Adams (Full Name); Suburb of Seattle, Washington (Location detail); Lakeview High School, 2005 (Educational history); kevin.adams@startup.com (Email address); 555-7788 (Phone number)",
+        "type": "redaction"
+    }
+]

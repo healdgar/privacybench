@@ -1,0 +1,130 @@
+{
+    "pdf_filenames": ["msa.pdf", "dpa.pdf"],
+    "summary_prompt": "# Instructions\n1. Review the attached CONTRACT thoroughly from the perspective of the Customer.\n2. First draft an overview as follows:\n   ## Contract Overview\n   - Summarize the contract's purpose\n   - List the parties\n   - State the Effective Date and Duration\n4. Then create a table: 'Contract Criteria' where you analyze the following key provisions:\n   a. Payment Terms\n   b. Auto-Renewal\n   c. Term\n   d. Termination\n   e. IP Ownership\n   f. Confidentiality\n   g. Limitation of Liability\n   h. Indemnification\n   i. Governing Law\n   j. Assignment\n   k. Artificial Intelligence \n   l. Warranties\n   m. Warranty Disclaimer\n   n. Waiver\n   o. Feedback\n   p. Force Majeure\n   q. Severability\n   r. Order of precedence\n   s. Unusual Terms\n5. Pay special attention to:\n   - Net 30 payment terms\n   - No auto-renewal clause\n   - No termination for convenience by counterparty\n   - Company should receive a full refund for termination for breach\n   - IP ownership where the party sending data continues to own that data\n   - Mutual limitation of liability\n   - Indemnification for counterparty\n   - Governing law (New York, Delaware, or California) with no arbitration\n   - Assignment restrictions (only to affiliate or successor in interest)\n   - No training AI with the data\n   - any unusual  or standout clauses\n6. For each provision in the 'Contract Criteria' table:\n   - Extract the exact quote, including section/subsection name and number.\n   - Analyze how the quote aligns with our requirements or may be problematic.\n   - Assign an emoji: 🟥 (needs action), 🟨 (may need action, unclear), or 🟩 (does not need action).\n   - Provide specific action needed, proposed language, or guidance.\n7. Use the following format for the table:\n   | Provision | Contract Quote | Analysis | Action |\n   |-----------|----------------|----------|--------|\n8. When proposing language changes, use~~strikethrough~~ for deletions and **bold** for additions.\n9. Ensure all quotes are accurate and analysis is thorough and objective.\n10. Present your review in the following order:\n    a. Introductory paragraph\n    b. Contract Criteria table",
+    "rating_criteria": [
+        "Accuracy: As compared to the source article, does the summary accurately report verifiable facts without fabricating any details? Rate on a scale of 1-10 (1 = severe fabrications/hallucinations, 10 = perfectly accurate).",
+        "Completeness: As compared to the source article, does the summary include all key information from the article, or are important details left out? Rate on a scale of 1-10 (1 = many key details omitted, 10 = fully comprehensive).",
+        {
+            "issue_spotting": {
+                "description": "Does the summary identify and assess issues in the contract? Rate on a scale of 1-10 where 10 means all identified issues are addressed and clearly analyzed.",
+                "issues": [
+                    {
+                        "provision": "Payment Terms",
+                        "action_urgency": "🟩",
+                        "analysis": "Confirmed alignment with requirements for net 30 payment terms. No contradictory terms in the Order Form identified.",
+                        "action": "No action needed, but confirm Order Form terms."
+                    },
+                    {
+                        "provision": "Auto-Renewal",
+                        "action_urgency": "🟥",
+                        "analysis": "Includes an auto-renewal clause which is not desired. This clause automatically extends the contract unless proactively cancelled.",
+                        "action": "Negotiate to remove the auto-renewal clause or change it to require affirmative consent for renewal."
+                    },
+                    {
+                        "provision": "Term",
+                        "action_urgency": "🟧",
+                        "analysis": "The overall agreement term is ongoing as long as subscriptions are active. Subscription terms defined in Order Forms renew automatically unless cancelled.",
+                        "action": "Ensure subscription terms in Order Forms are acceptable. If auto-renewal is not removed, implement internal tracking for renewal deadlines."
+                    },
+                    {
+                        "provision": "Termination",
+                        "action_urgency": "🟥",
+                        "analysis": "No termination for convenience for either party, which is typical for SaaS agreements. Termination for cause requires a 30-day cure period.",
+                        "action": "Negotiate for termination for convenience for Customer and mutual termination for convenience with appropriate notice period (e.g., 60-90 days)."
+                    },
+                    {
+                        "provision": "IP Ownership",
+                        "action_urgency": "🟩",
+                        "analysis": "SFDC retains IP of Services and Content. Customer retains ownership of Customer Data and Non-SFDC Applications, which is standard and acceptable.",
+                        "action": "No action needed."
+                    },
+                    {
+                        "provision": "Confidentiality",
+                        "action_urgency": "🟩",
+                        "analysis": "Establishes mutual confidentiality obligations and includes Customer Data under the definition of confidential information.",
+                        "action": "No action needed."
+                    },
+                    {
+                        "provision": "Limitation of Liability",
+                        "action_urgency": "🟥",
+                        "analysis": "Mutual limitation of liability is present but capped at fees paid in the preceding 12 months, which is potentially restrictive and could be too low.",
+                        "action": "Negotiate to increase the liability cap to be at least the greater of fees paid in the last 12 months or a fixed amount."
+                    },
+                    {
+                        "provision": "Indemnification",
+                        "action_urgency": "🟧",
+                        "analysis": "Mutual indemnification is present. SFDC indemnifies Customer for IP infringement related to Services; scope of Customer's indemnification is broad.",
+                        "action": "Seek to narrow the scope of Customer's indemnification, particularly concerning 'Customer Data' and 'unlawful use.'"
+                    },
+                    {
+                        "provision": "Governing Law",
+                        "action_urgency": "🟩",
+                        "analysis": "Governing law is specified based on Customer's domicile, which is standard. No mandatory arbitration clause is present.",
+                        "action": "No action needed; confirm governing law based on Customer's domicile."
+                    },
+                    {
+                        "provision": "Assignment",
+                        "action_urgency": "🟩",
+                        "analysis": "Assignment restrictions are mutual, allowing reasonable business flexibility.",
+                        "action": "No action needed."
+                    },
+                    {
+                        "provision": "Artificial Intelligence",
+                        "action_urgency": "🟧",
+                        "analysis": "No explicit clause prohibits the use of Customer Data for training AI models, posing a risk to data privacy.",
+                        "action": "Negotiate a clause prohibiting SFDC from using Customer Data to train AI models without explicit consent."
+                    },
+                    {
+                        "provision": "Warranties",
+                        "action_urgency": "🟩",
+                        "analysis": "Standard service warranties regarding security, performance, and functionality are provided.",
+                        "action": "No action needed."
+                    },
+                    {
+                        "provision": "Warranty Disclaimer",
+                        "action_urgency": "🟩",
+                        "analysis": "Broad disclaimer of implied warranties is typical in SaaS agreements.",
+                        "action": "No action needed."
+                    },
+                    {
+                        "provision": "Waiver",
+                        "action_urgency": "🟩",
+                        "analysis": "Standard non-waiver clause preserving rights.",
+                        "action": "No action needed."
+                    },
+                    {
+                        "provision": "Feedback",
+                        "action_urgency": "🟧",
+                        "analysis": "Customer grants a broad license for feedback. This license could be narrowed.",
+                        "action": "Consider negotiating to limit feedback usage to improving Salesforce services only."
+                    },
+                    {
+                        "provision": "Force Majeure",
+                        "action_urgency": "🟩",
+                        "analysis": "Force Majeure clause is present and provides typical protections.",
+                        "action": "No action needed."
+                    },
+                    {
+                        "provision": "Severability",
+                        "action_urgency": "🟩",
+                        "analysis": "Standard severability clause is included.",
+                        "action": "No action needed."
+                    },
+                    {
+                        "provision": "Order of Precedence",
+                        "action_urgency": "🟩",
+                        "analysis": "Order of precedence is defined, with standard structures.",
+                        "action": "No action needed."
+                    },
+                    {
+                        "provision": "Unusual Clauses",
+                        "action_urgency": "🟥",
+                        "analysis": "Harsh data loss clause for free trials presents significant risk if Customer does not export data.",
+                        "action": "Negotiate for a reasonable data retention/export period after trial or downgrade."
+                    }
+                ]
+            },
+        "Citations: Does the summary cite all provisions accurately?",
+        "Instructions: Does the summary follow the instructions of the prompt?"
+    ]
+}

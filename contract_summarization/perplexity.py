@@ -1,7 +1,7 @@
 import requests
 
 # Set your API key here
-API_KEY = "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"
+API_KEY = "--------"
 
 url = "https://api.perplexity.ai/chat/completions"
 payload = {
